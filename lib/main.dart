@@ -1,4 +1,6 @@
+import 'package:artsy_nft_marketplace/theme/theme_color.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,19 +15,52 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          // color theme
-
-          // backgroundColor: Color(0xff1B222A),
-          // This is the theme of your application.
-          //
-          // Try running your application with "flutter run". You'll see the
-          // application has a blue toolbar. Then, without quitting the app, try
-          // changing the primarySwatch below to Colors.green and then invoke
-          // "hot reload" (press "r" in the console where you ran "flutter run",
-          // or simply save your changes to "hot reload" in a Flutter IDE).
-          // Notice that the counter didn't reset back to zero; the application
-          // is not restarted.
+        scaffoldBackgroundColor: Color(0xff1B222A),
+        // COLOR THEME
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: ThemeColor.primary,
+          brightness: Brightness.dark,
+          primary: ThemeColor.primary,
+          onPrimary: ThemeColor.white,
+        ),
+        textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
+        // INPUT DECORATION THEME
+        inputDecorationTheme: InputDecorationTheme(
+          fillColor: ThemeColor.primary_shade,
+          filled: true,
+          border: OutlineInputBorder(borderSide: BorderSide.none),
+        ),
+        // ELEVATED BUTTON
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 18),
+            textStyle: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           ),
+        ),
+        //Text Button Theme
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            primary: ThemeColor.secondary,
+          ),
+        ),
+        // OutlinedButton
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 18),
+            primary: ThemeColor.white,
+            textStyle: TextStyle(
+              fontSize: 12.0,
+              fontWeight: FontWeight.w600,
+            ),
+            side: BorderSide(
+              color: ThemeColor.inactive,
+            ),
+          ),
+        ),
+      ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -107,9 +142,33 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            ElevatedButton(
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Get Started'),
+                  ),
+                ),
+              ],
+            ),
+            TextButton(
               onPressed: () {},
-              child: Text('test'),
+              child: Container(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text('Get Started'),
+                    Icon(
+                      Icons.arrow_right_alt,
+                    )
+                  ],
+                ),
+              ),
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              child: Text('Follow'),
             )
           ],
         ),
