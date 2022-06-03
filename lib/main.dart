@@ -1,4 +1,7 @@
+import 'package:artsy_nft_marketplace/theme/theme_button.dart';
 import 'package:artsy_nft_marketplace/theme/theme_color.dart';
+import 'package:artsy_nft_marketplace/theme/theme_color_schema.dart';
+import 'package:artsy_nft_marketplace/theme/theme_input.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,49 +19,15 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0xff1B222A),
-        // COLOR THEME
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: ThemeColor.primary,
-          brightness: Brightness.dark,
-          primary: ThemeColor.primary,
-          onPrimary: ThemeColor.white,
-        ),
+        colorScheme: ThemeColorSchema.colorSchema,
         textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
-        // INPUT DECORATION THEME
-        inputDecorationTheme: InputDecorationTheme(
-          fillColor: ThemeColor.primary_shade,
-          filled: true,
-          border: OutlineInputBorder(borderSide: BorderSide.none),
-        ),
-        // ELEVATED BUTTON
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 18),
-            textStyle: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        //Text Button Theme
-        textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(
-            primary: ThemeColor.secondary,
-          ),
-        ),
-        // OutlinedButton
-        outlinedButtonTheme: OutlinedButtonThemeData(
-          style: OutlinedButton.styleFrom(
-            padding: EdgeInsets.symmetric(horizontal: 32, vertical: 18),
-            primary: ThemeColor.white,
-            textStyle: TextStyle(
-              fontSize: 12.0,
-              fontWeight: FontWeight.w600,
-            ),
-            side: BorderSide(
-              color: ThemeColor.inactive,
-            ),
-          ),
+        inputDecorationTheme: ThemeInput.inputDecoration,
+        elevatedButtonTheme: ThemeButton.elevatedButton,
+        textButtonTheme: ThemeButton.textButton,
+        outlinedButtonTheme: ThemeButton.outlinedButton,
+        appBarTheme: AppBarTheme(
+          backgroundColor: ThemeColor.transparent,
+          shadowColor: ThemeColor.transparent,
         ),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
