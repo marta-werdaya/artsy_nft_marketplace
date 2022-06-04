@@ -11,4 +11,5 @@ class IconPath {
   static const inactive_wallet = 'assets/icons/inactive_wallet_icon.png';
   static const arrow_left = 'assets/icons/arrow_left_icon.png';
   static const search = 'assets/icons/search_icon.png';
+  static const heart_white = 'assets/icons/heart_white_icon.png';
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
 import '../constant/button_styles.dart';
-import '../theme/theme_color.dart';
+import 'custom_card.dart';
 import 'glassmorphism.dart';
 
 class CardNFT extends StatelessWidget {
@@ -15,17 +15,8 @@ class CardNFT extends StatelessWidget {
     return Stack(
       children: [
         // hold the picture and container for the picture
-        Container(
+        CustomCard(
           margin: EdgeInsets.only(right: AppSizes.p16),
-          width: AppSizes.p341,
-          decoration: BoxDecoration(
-            color: ThemeColor.primary_shade,
-            borderRadius: BorderRadius.circular(AppSizes.p4),
-            border: Border.all(
-              color: ThemeColor.white,
-              width: AppSizes.p05,
-            ),
-          ),
           child: Padding(
             padding: EdgeInsets.all(AppSizes.p8),
             child: Image.asset(

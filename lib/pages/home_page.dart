@@ -41,13 +41,16 @@ class TopSeller extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListCard(),
-        ListCard(),
-        ListCard(),
-        ListCard(),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
+      child: Column(
+        children: [
+          ListCard(),
+          ListCard(),
+          ListCard(),
+          ListCard(),
+        ],
+      ),
     );
   }
 }
