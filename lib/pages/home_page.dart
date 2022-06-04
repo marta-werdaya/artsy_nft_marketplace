@@ -179,9 +179,28 @@ class CardNFT extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Trending NFT'),
-                      Text('0.39 ETH'),
-                      Text('Highest Bid'),
+                      Text(
+                        'Trending NFT',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: AppSizes.p20,
+                        ),
+                      ),
+                      AppSizes.gapH20,
+                      Text(
+                        '0.39 ETH',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: AppSizes.p16,
+                        ),
+                      ),
+                      Text(
+                        'Highest Bid',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w200,
+                          fontSize: AppSizes.p12,
+                        ),
+                      ),
                     ],
                   ),
                   ElevatedButton(

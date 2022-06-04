@@ -23,7 +23,7 @@ class TitleWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           Text(
-            'Trending NFT',
+            title,
             style: TextStyle(
               fontSize: AppSizes.p16,
               fontWeight: FontWeight.bold,
