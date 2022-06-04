@@ -1,6 +1,13 @@
-import 'package:artsy_nft_marketplace/constant/asset_constant.dart';
+import 'dart:ui';
+
+import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
+import 'package:artsy_nft_marketplace/constant/button_styles.dart';
 import 'package:artsy_nft_marketplace/theme/theme_color.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/logo_app_bar.dart';
+import '../widgets/search_bar.dart';
+import '../widgets/title_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,138 +15,221 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarHome(),
+      appBar: LogoAppBar(),
       body: SingleChildScrollView(
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              WelcomeWidget(),
-              CustomeSearchBarWidget(),
-              CustomTitleWidget()
-            ],
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            WelcomeText(),
+            SearchBar(),
+            TitleWidget(),
+            CategoryWidget(),
+            TrendingNFT(),
+          ],
         ),
       ),
     );
   }
 }
 
-class CustomTitleWidget extends StatelessWidget {
-  const CustomTitleWidget({
+class TrendingNFT extends StatelessWidget {
+  const TrendingNFT({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        mainAxisSize: MainAxisSize.max,
+    return Container(
+      height: AppSizes.p314,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
         children: [
-          Text(
-            'Trending NFT',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            'See All',
-            style: TextStyle(
-              color: ThemeColor.secondary,
-            ),
-          ),
+          CardNFT(),
+          CardNFT(),
+          CardNFT(),
         ],
       ),
     );
   }
 }
 
-class CustomeSearchBarWidget extends StatelessWidget {
-  const CustomeSearchBarWidget({
+class CardNFT extends StatelessWidget {
+  const CardNFT({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: 32),
-      child: TextFormField(
-        decoration: InputDecoration(
-          hintText: 'Search for the NFT',
-          prefixIcon: Icon(Icons.search),
+    return Stack(
+      children: [
+        // hold the picture and container for the picture
+        Container(
+          margin: EdgeInsets.only(right: AppSizes.p16),
+          width: AppSizes.p341,
+          decoration: BoxDecoration(
+            color: ThemeColor.primary_shade,
+            borderRadius: BorderRadius.circular(AppSizes.p4),
+            border: Border.all(
+              color: ThemeColor.white,
+              width: 0.5,
+            ),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(AppSizes.p8),
+            child: Image.asset(
+              'assets/images/nft1_artsy.png',
+            ),
+          ),
+        ),
+        // Glass looking placement for the text
+        Positioned(
+          left: AppSizes.pZero,
+          bottom: AppSizes.pZero,
+          child: GlassMorphism(
+            child: Padding(
+              padding: EdgeInsets.all(AppSizes.p16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Trending NFT'),
+                      Text('0.39 ETH'),
+                      Text('Highest Bid'),
+                    ],
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: StyleButton.placeABid,
+                    child: Text('Place a Bid'),
+                  )
+                ],
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class GlassMorphism extends StatelessWidget {
+  final Widget child;
+  const GlassMorphism({Key? key, required this.child}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.vertical(
+        bottom: Radius.circular(AppSizes.p4),
+      ),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: AppSizes.p32, sigmaY: AppSizes.p32),
+        child: Container(
+          height: 127,
+          width: 341,
+          color: Colors.white.withOpacity(AppSizes.p02),
+          child: child,
         ),
       ),
     );
   }
 }
 
-class WelcomeWidget extends StatelessWidget {
-  const WelcomeWidget({
+class CategoryWidget extends StatelessWidget {
+  const CategoryWidget({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'Welcome Back',
-          style: TextStyle(
-              fontWeight: FontWeight.w300, color: ThemeColor.inactive),
+    return Container(
+      margin: EdgeInsets.only(
+        bottom: AppSizes.p32,
+        left: AppSizes.p24,
+        right: AppSizes.p24,
+      ),
+      height: AppSizes.p48,
+      child: ListView(scrollDirection: Axis.horizontal, children: [
+        CategoryButton(
+          isActive: true,
+          title: 'Game',
         ),
-        Text(
-          'Marta',
-          style: TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-          ),
+        CategoryButton(
+          isActive: false,
+          title: 'Art',
         ),
-        SizedBox(
-          height: 32,
-        )
-      ],
+        CategoryButton(
+          isActive: false,
+          title: 'Music',
+        ),
+        CategoryButton(
+          isActive: false,
+          title: 'Video',
+        ),
+        CategoryButton(
+          isActive: false,
+          title: 'GIF',
+        ),
+      ]),
     );
   }
 }
 
-class CustomAppBarHome extends StatelessWidget implements PreferredSize {
-  const CustomAppBarHome({
+class CategoryButton extends StatelessWidget {
+  final bool isActive;
+  final String title;
+  const CategoryButton({
+    Key? key,
+    required this.isActive,
+    required this.title,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(right: AppSizes.p12),
+      child: Container(
+        decoration: BoxDecoration(),
+        child: ElevatedButton(
+          style: isActive
+              ? StyleButton.activeCategory
+              : StyleButton.inactiveCategory,
+          onPressed: () {},
+          child: Text(title),
+        ),
+      ),
+    );
+  }
+}
+
+class WelcomeText extends StatelessWidget {
+  const WelcomeText({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget get child => AppBar();
-
-  @override
-  Size get preferredSize => Size.fromHeight(60.0);
-
-  @override
   Widget build(BuildContext context) {
-    return AppBar(
-      actions: [
-        Padding(
-          padding: EdgeInsets.only(right: 24),
-          child: Row(
-            children: [
-              Image.asset(
-                AssetConstants.iconArtsy,
-                width: 30,
-              ),
-              SizedBox(width: 8),
-              Text(
-                'ARTSY',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
+      child: Column(
+        children: [
+          Text(
+            'Welcome Back',
+            style: TextStyle(
+                fontWeight: FontWeight.w300, color: ThemeColor.inactive),
           ),
-        )
-      ],
+          Text(
+            'Marta',
+            style: TextStyle(
+              fontSize: AppSizes.p32,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          AppSizes.gapH32
+        ],
+      ),
     );
   }
 }
