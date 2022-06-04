@@ -4,8 +4,10 @@ import '../constant/app_sizes.dart';
 import '../theme/theme_color.dart';
 
 class TitleWidget extends StatelessWidget {
+  final String title;
   const TitleWidget({
     Key? key,
+    required this.title,
   }) : super(key: key);
 
   @override

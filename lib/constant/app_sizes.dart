@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class AppSizes {
   static const pZero = 0.0;
   static const p02 = 0.2;
+  static const p05 = 0.5;
   static const p4 = 4.0;
   static const p8 = 8.0;
   static const p12 = 12.0;
@@ -13,6 +14,7 @@ class AppSizes {
   static const p32 = 32.0;
   static const p48 = 48.0;
   static const p64 = 64.0;
+  static const p72 = 72.0;
   static const p314 = 314.0;
   static const p341 = 341.0;
 

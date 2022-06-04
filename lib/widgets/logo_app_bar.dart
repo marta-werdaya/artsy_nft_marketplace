@@ -26,7 +26,7 @@ class LogoAppBar extends StatelessWidget implements PreferredSize {
                 AssetConstants.iconArtsy,
                 width: AppSizes.p32,
               ),
-              AppSizes.gapH8,
+              AppSizes.gapW8,
               Text(
                 'ARTSY',
                 style: TextStyle(
