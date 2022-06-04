@@ -1,10 +1,10 @@
-import 'dart:ui';
-
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
-import 'package:artsy_nft_marketplace/constant/button_styles.dart';
 import 'package:artsy_nft_marketplace/theme/theme_color.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/card_nft.dart';
+import '../widgets/category_button.dart';
+import '../widgets/list_card.dart';
 import '../widgets/logo_app_bar.dart';
 import '../widgets/search_bar.dart';
 import '../widgets/title_widget.dart';
@@ -52,70 +52,6 @@ class TopSeller extends StatelessWidget {
   }
 }
 
-class ListCard extends StatelessWidget {
-  const ListCard({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(
-          bottom: AppSizes.p12, left: AppSizes.p24, right: AppSizes.p24),
-      height: AppSizes.p72,
-      decoration: BoxDecoration(
-        border: Border.all(color: ThemeColor.inactive, width: AppSizes.p05),
-        color: ThemeColor.primary_shade,
-        borderRadius: BorderRadius.circular(AppSizes.p4),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: AppSizes.p16,
-          vertical: AppSizes.p8,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // AVATAR
-            Row(
-              children: [
-                CircleAvatar(
-                  backgroundColor: ThemeColor.secondary,
-                  backgroundImage: AssetImage('assets/images/peep_5.png'),
-                  radius: AppSizes.p24,
-                ),
-                // Title and price
-                Padding(
-                  padding: EdgeInsets.only(left: AppSizes.p12),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Gigantopus',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text('9.60 ETH'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-
-            // Button
-            OutlinedButton(
-              onPressed: () {},
-              child: Text('Follow'),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class TrendingNFT extends StatelessWidget {
   const TrendingNFT({
     Key? key,
@@ -138,109 +74,6 @@ class TrendingNFT extends StatelessWidget {
   }
 }
 
-class CardNFT extends StatelessWidget {
-  const CardNFT({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        // hold the picture and container for the picture
-        Container(
-          margin: EdgeInsets.only(right: AppSizes.p16),
-          width: AppSizes.p341,
-          decoration: BoxDecoration(
-            color: ThemeColor.primary_shade,
-            borderRadius: BorderRadius.circular(AppSizes.p4),
-            border: Border.all(
-              color: ThemeColor.white,
-              width: AppSizes.p05,
-            ),
-          ),
-          child: Padding(
-            padding: EdgeInsets.all(AppSizes.p8),
-            child: Image.asset(
-              'assets/images/nft1_artsy.png',
-            ),
-          ),
-        ),
-        // Glass looking placement for the text
-        Positioned(
-          left: AppSizes.pZero,
-          bottom: AppSizes.pZero,
-          child: GlassMorphism(
-            child: Padding(
-              padding: EdgeInsets.all(AppSizes.p16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Trending NFT',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: AppSizes.p20,
-                        ),
-                      ),
-                      AppSizes.gapH20,
-                      Text(
-                        '0.39 ETH',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: AppSizes.p16,
-                        ),
-                      ),
-                      Text(
-                        'Highest Bid',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w200,
-                          fontSize: AppSizes.p12,
-                        ),
-                      ),
-                    ],
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: StyleButton.placeABid,
-                    child: Text('Place a Bid'),
-                  )
-                ],
-              ),
-            ),
-          ),
-        )
-      ],
-    );
-  }
-}
-
-class GlassMorphism extends StatelessWidget {
-  final Widget child;
-  const GlassMorphism({Key? key, required this.child}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.vertical(
-        bottom: Radius.circular(AppSizes.p4),
-      ),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: AppSizes.p32, sigmaY: AppSizes.p32),
-        child: Container(
-          height: 127,
-          width: 341,
-          color: Colors.white.withOpacity(AppSizes.p02),
-          child: child,
-        ),
-      ),
-    );
-  }
-}
-
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({
     Key? key,
@@ -252,7 +85,6 @@ class CategoryWidget extends StatelessWidget {
       margin: EdgeInsets.only(
         bottom: AppSizes.p32,
         left: AppSizes.p24,
-        right: AppSizes.p24,
       ),
       height: AppSizes.p48,
       child: ListView(scrollDirection: Axis.horizontal, children: [
@@ -277,33 +109,6 @@ class CategoryWidget extends StatelessWidget {
           title: 'GIF',
         ),
       ]),
-    );
-  }
-}
-
-class CategoryButton extends StatelessWidget {
-  final bool isActive;
-  final String title;
-  const CategoryButton({
-    Key? key,
-    required this.isActive,
-    required this.title,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(right: AppSizes.p12),
-      child: Container(
-        decoration: BoxDecoration(),
-        child: ElevatedButton(
-          style: isActive
-              ? StyleButton.activeCategory
-              : StyleButton.inactiveCategory,
-          onPressed: () {},
-          child: Text(title),
-        ),
-      ),
     );
   }
 }
