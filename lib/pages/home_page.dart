@@ -22,10 +22,16 @@ class HomePage extends StatelessWidget {
           children: [
             WelcomeText(),
             SearchBar(),
-            TitleWidget(title: 'Trending NFT'),
+            TitleWidget(
+              title: 'Trending NFT',
+              isSeeAll: true,
+            ),
             CategoryWidget(),
             TrendingNFT(),
-            TitleWidget(title: 'Top Seller'),
+            TitleWidget(
+              title: 'Top Seller',
+              isSeeAll: true,
+            ),
             TopSeller(),
           ],
         ),

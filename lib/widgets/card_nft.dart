@@ -29,6 +29,8 @@ class CardNFT extends StatelessWidget {
           left: AppSizes.pZero,
           bottom: AppSizes.pZero,
           child: GlassMorphism(
+            height: AppSizes.p127,
+            width: AppSizes.p341,
             child: Padding(
               padding: EdgeInsets.all(AppSizes.p16),
               child: Row(

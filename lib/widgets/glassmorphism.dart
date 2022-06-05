@@ -5,8 +5,16 @@ import 'package:flutter/material.dart';
 import '../constant/app_sizes.dart';
 
 class GlassMorphism extends StatelessWidget {
+  final double height;
+  final double width;
+
   final Widget child;
-  const GlassMorphism({Key? key, required this.child}) : super(key: key);
+  const GlassMorphism({
+    Key? key,
+    required this.child,
+    required this.height,
+    required this.width,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +25,8 @@ class GlassMorphism extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: AppSizes.p32, sigmaY: AppSizes.p32),
         child: Container(
-          height: 127,
-          width: 341,
+          height: height,
+          width: width,
           color: Colors.white.withOpacity(AppSizes.p02),
           child: child,
         ),
