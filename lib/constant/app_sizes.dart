@@ -17,6 +17,7 @@ class AppSizes {
   static const p64 = 64.0;
   static const p72 = 72.0;
   static const p80 = 80.0;
+  static const p104 = 104.0;
   static const p127 = 127.0;
   static const p225 = 225.0;
   static const p314 = 314.0;
@@ -45,4 +46,5 @@ class AppSizes {
   static const gapH64 = SizedBox(height: p64);
   static const gapH72 = SizedBox(height: p72);
   static const gapH80 = SizedBox(height: p80);
+  static const gapH104 = SizedBox(height: p104);
 }
