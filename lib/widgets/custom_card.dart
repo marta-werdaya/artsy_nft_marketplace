@@ -6,10 +6,12 @@ import '../theme/theme_color.dart';
 class CustomCard extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry margin;
+  final Color color;
   const CustomCard({
     Key? key,
     required this.child,
     required this.margin,
+    this.color = ThemeColor.primary_shade,
   }) : super(key: key);
 
   @override
@@ -17,7 +19,7 @@ class CustomCard extends StatelessWidget {
     return Container(
       margin: margin,
       decoration: BoxDecoration(
-        color: ThemeColor.primary_shade,
+        color: color,
         borderRadius: BorderRadius.circular(AppSizes.p4),
         border: Border.all(
           color: ThemeColor.white,

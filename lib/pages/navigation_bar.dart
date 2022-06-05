@@ -7,6 +7,8 @@ import 'package:artsy_nft_marketplace/pages/wishlist_page.dart';
 import 'package:artsy_nft_marketplace/theme/theme_color.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/icon_display.dart';
+
 class CustomNavigationBar extends StatefulWidget {
   const CustomNavigationBar({Key? key}) : super(key: key);
 
@@ -89,22 +91,6 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class IconDisplay extends StatelessWidget {
-  final String path;
-  const IconDisplay({
-    Key? key,
-    required this.path,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Image.asset(
-      path,
-      height: 24,
     );
   }
 }

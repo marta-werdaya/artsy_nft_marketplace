@@ -2,12 +2,12 @@ import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
 import 'package:artsy_nft_marketplace/theme/theme_color.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/card_nft.dart';
-import '../widgets/category_button.dart';
-import '../widgets/list_card.dart';
+import '../widgets/category_widget.dart';
 import '../widgets/logo_app_bar.dart';
 import '../widgets/search_bar.dart';
 import '../widgets/title_widget.dart';
+import '../widgets/top_seller.dart';
+import '../widgets/trending_nft.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -36,88 +36,6 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class TopSeller extends StatelessWidget {
-  const TopSeller({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
-      child: Column(
-        children: [
-          ListCard(),
-          ListCard(),
-          ListCard(),
-          ListCard(),
-        ],
-      ),
-    );
-  }
-}
-
-class TrendingNFT extends StatelessWidget {
-  const TrendingNFT({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: AppSizes.p314,
-      margin: EdgeInsets.only(bottom: AppSizes.p32),
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: [
-          CardNFT(),
-          CardNFT(),
-          CardNFT(),
-        ],
-      ),
-    );
-  }
-}
-
-class CategoryWidget extends StatelessWidget {
-  const CategoryWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(
-        bottom: AppSizes.p32,
-        left: AppSizes.p24,
-      ),
-      height: AppSizes.p48,
-      child: ListView(scrollDirection: Axis.horizontal, children: [
-        CategoryButton(
-          isActive: true,
-          title: 'Game',
-        ),
-        CategoryButton(
-          isActive: false,
-          title: 'Art',
-        ),
-        CategoryButton(
-          isActive: false,
-          title: 'Music',
-        ),
-        CategoryButton(
-          isActive: false,
-          title: 'Video',
-        ),
-        CategoryButton(
-          isActive: false,
-          title: 'GIF',
-        ),
-      ]),
     );
   }
 }

@@ -1,7 +1,9 @@
+import 'package:artsy_nft_marketplace/constant/image_path.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
 import '../constant/button_styles.dart';
+import '../constant/string_constants.dart';
 import 'custom_card.dart';
 import 'glassmorphism.dart';
 
@@ -20,7 +22,7 @@ class CardNFT extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(AppSizes.p8),
             child: Image.asset(
-              'assets/images/nft1_artsy.png',
+              ImagePath.nft1,
             ),
           ),
         ),
@@ -40,7 +42,7 @@ class CardNFT extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Trending NFT',
+                        StrigConstants.trendingNFT,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: AppSizes.p20,
@@ -48,14 +50,14 @@ class CardNFT extends StatelessWidget {
                       ),
                       AppSizes.gapH20,
                       Text(
-                        '0.39 ETH',
+                        StrigConstants.price,
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: AppSizes.p16,
                         ),
                       ),
                       Text(
-                        'Highest Bid',
+                        StrigConstants.highetBid,
                         style: TextStyle(
                           fontWeight: FontWeight.w200,
                           fontSize: AppSizes.p12,
