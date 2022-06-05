@@ -13,5 +13,6 @@ class IconPath {
   static const arrow_left = 'assets/icons/arrow_left_icon.png';
   static const search = 'assets/icons/search_icon.png';
   static const heart_white = 'assets/icons/heart_white_icon.png';
+  static const heart_red = 'assets/icons/red_heart.png';
   static const logo_eth = 'assets/icons/logo_eth.png';
 }

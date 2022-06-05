@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
-import '../constant/icon_path.dart';
 import 'custom_card.dart';
+import 'heart_widget.dart';
 
 class PreviewCard extends StatelessWidget {
   const PreviewCard({
@@ -38,13 +38,7 @@ class PreviewCard extends StatelessWidget {
                 ),
               ],
             ),
-            Padding(
-              padding: EdgeInsets.all(AppSizes.p4),
-              child: Image.asset(
-                IconPath.heart_white,
-                height: AppSizes.p24,
-              ),
-            )
+            HeartWidget(),
           ],
         ),
       ),
