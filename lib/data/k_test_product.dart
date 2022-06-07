@@ -56,14 +56,14 @@ const kTestProducts = [
     id: 8,
     imageUrl: AppAssets.imageNft8,
     sellerName: 'Sanur Collection',
-    nftName: 'Purnama Kapitu',
+    nftName: 'Tilem Kapitu',
     price: 1.89,
   ),
   ProductModel(
     id: 9,
     imageUrl: AppAssets.imageNft9,
     sellerName: 'Devata Collection',
-    nftName: 'Pink Kuning #1',
+    nftName: 'Pink Gading #1',
     price: 0.89,
   ),
   ProductModel(

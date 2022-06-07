@@ -76,7 +76,7 @@ class ProfilePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Marta Galani',
+                            'NopNop Gemoy',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: AppSizes.p20,

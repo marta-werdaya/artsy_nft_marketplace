@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/app_colors.dart';
 import '../data/k_test_product.dart';
+import '../widgets/bid_bottom_sheet.dart';
 import '../widgets/countdown_widget.dart';
 import '../widgets/detail_banner.dart';
 import '../widgets/profile_info.dart';
@@ -58,7 +59,7 @@ class _DetailNFTState extends State<DetailNFT> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
               child: Text(
-                'jika coountdown telah mencapa "00 : 00 : 00" maka tombol akan di disable, countdown menjadi text time is up!!! dan curent bid akan berubah menjadi final bid.  ',
+                'jika coountdown telah mencapai "00 : 00 : 00" maka tombol akan di disable, countdown menjadi text time is up!!! dan curent bid akan berubah menjadi final bid.  ',
               ),
             ),
             Container(
@@ -66,7 +67,21 @@ class _DetailNFTState extends State<DetailNFT> {
               padding: EdgeInsets.symmetric(
                   horizontal: AppSizes.p24, vertical: AppSizes.p16),
               child: ElevatedButton(
-                onPressed: closeTheBid ? null : () {},
+                onPressed: closeTheBid
+                    ? null
+                    : () {
+                        showModalBottomSheet(
+                          backgroundColor: AppColor.bg,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(AppSizes.p8),
+                              topRight: Radius.circular(AppSizes.p8),
+                            ),
+                          ),
+                          context: context,
+                          builder: (context) => BidBottomSheet(),
+                        );
+                      },
                 child: Text('Place a Bid'),
               ),
             )

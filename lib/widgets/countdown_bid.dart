@@ -20,7 +20,8 @@ class CountDownBid extends StatefulWidget {
 }
 
 class _CountDownBidState extends State<CountDownBid> {
-  Duration duration = Duration(seconds: 3);
+  // Duration duration = Duration(hours: 17, minutes: 08, seconds: 45);
+  Duration duration = Duration(seconds: 5);
   Timer? timer;
   bool isEnd = false;
   @override
@@ -45,6 +46,11 @@ class _CountDownBidState extends State<CountDownBid> {
 
   void startTimer() {
     timer = Timer.periodic(Duration(seconds: 1), (_) => addTime());
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
