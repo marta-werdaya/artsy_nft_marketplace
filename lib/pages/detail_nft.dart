@@ -82,7 +82,7 @@ class ProfileInfo extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    backgroundImage: AssetImage(AppAssets.image_avatar1),
+                    backgroundImage: AssetImage(AppAssets.imageAvatar1),
                     backgroundColor: AppColor.secondary,
                   ),
                   AppSizes.gapW12,
@@ -168,7 +168,7 @@ class DetailBanner extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       clipBehavior: Clip.none,
       children: [
-        Image.asset(AppAssets.image_nft1),
+        Image.asset(AppAssets.imageNft1),
         GlassMorphism(
           child: Container(),
           height: 360,
@@ -187,7 +187,7 @@ class DetailBanner extends StatelessWidget {
                 ),
               ),
               child: Image.asset(
-                AppAssets.image_nft1,
+                AppAssets.imageNft1,
                 height: 294,
               )),
         ),

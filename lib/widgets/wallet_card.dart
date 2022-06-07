@@ -49,7 +49,7 @@ class WalletCard extends StatelessWidget {
 
                 // Logo ETH
                 Image.asset(
-                  AppAssets.icon_logo_eth,
+                  AppAssets.iconLogoEth,
                   height: AppSizes.p64,
                 )
               ],

@@ -1,4 +1,3 @@
-import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:artsy_nft_marketplace/pages/detail_nft.dart';
 import 'package:flutter/material.dart';
 
@@ -9,8 +8,14 @@ import 'custom_card.dart';
 import 'glassmorphism.dart';
 
 class CardNFT extends StatelessWidget {
+  final String imageUrl;
+  final double price;
+  final String nftName;
   const CardNFT({
     Key? key,
+    required this.imageUrl,
+    required this.price,
+    required this.nftName,
   }) : super(key: key);
 
   @override
@@ -28,7 +33,7 @@ class CardNFT extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(AppSizes.p8),
               child: Image.asset(
-                AppAssets.image_nft1,
+                imageUrl,
               ),
             ),
           ),
@@ -48,7 +53,7 @@ class CardNFT extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          AppString.trendingNFT,
+                          nftName,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: AppSizes.p20,
@@ -56,7 +61,7 @@ class CardNFT extends StatelessWidget {
                         ),
                         AppSizes.gapH20,
                         Text(
-                          AppString.price,
+                          '$price ETH',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: AppSizes.p16,

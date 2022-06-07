@@ -23,7 +23,7 @@ class _HeartWidgetState extends State<HeartWidget> {
       child: Padding(
         padding: EdgeInsets.all(AppSizes.p4),
         child: Image.asset(
-          isLike ? AppAssets.icon_heart_red : AppAssets.icon_heart_white,
+          isLike ? AppAssets.iconHeartRed : AppAssets.iconHeartWhite,
           height: AppSizes.p28,
         ),
       ),

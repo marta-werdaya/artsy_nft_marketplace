@@ -18,7 +18,7 @@ class WalletPage extends StatelessWidget {
         actions: [
           IconButton(
             icon: IconDisplay(
-              path: AppAssets.icon_active_add,
+              path: AppAssets.iconActiveAdd,
             ),
             tooltip: 'Open shopping cart',
             onPressed: () {

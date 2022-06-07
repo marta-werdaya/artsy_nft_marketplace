@@ -1,16 +1,19 @@
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
 import 'package:artsy_nft_marketplace/widgets/glassmorphism.dart';
-import 'package:artsy_nft_marketplace/widgets/preview_card.dart';
 import 'package:artsy_nft_marketplace/widgets/title_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/app_colors.dart';
+import '../data/k_test_product.dart';
+import '../widgets/preview_card.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    const products = kTestProducts;
+
     return Scaffold(
       // extendBodyBehindAppBar: true,
       // appBar: AppBar(
@@ -109,12 +112,12 @@ class ProfilePage extends StatelessWidget {
                     spacing: AppSizes.p20,
                     runSpacing: AppSizes.p20,
                     children: [
-                      PreviewCard(),
-                      PreviewCard(),
-                      PreviewCard(),
-                      PreviewCard(),
-                      PreviewCard(),
-                      PreviewCard(),
+                      for (int i = 6; i < products.length; i++)
+                        PreviewCard(
+                          imageUrl: products[i].url,
+                          sellerName: products[i].sellerName,
+                          nftName: products[i].nftName,
+                        )
                     ],
                   )
                 ],

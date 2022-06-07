@@ -25,7 +25,7 @@ class ListTransaction extends StatelessWidget {
             Row(
               children: [
                 Image.asset(
-                  AppAssets.image_nft1,
+                  AppAssets.imageNft1,
                   width: AppSizes.p48,
                 ),
                 // Title and price

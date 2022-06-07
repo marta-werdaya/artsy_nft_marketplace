@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/k_test_product.dart';
 import '../widgets/preview_card.dart';
 import '../widgets/search_bar.dart';
 
@@ -8,6 +9,8 @@ class WistlistPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const products = kTestProducts;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('WistList'),
@@ -20,15 +23,12 @@ class WistlistPage extends StatelessWidget {
               spacing: 20,
               runSpacing: 20,
               children: [
-                PreviewCard(),
-                PreviewCard(),
-                PreviewCard(),
-                PreviewCard(),
-                PreviewCard(),
-                PreviewCard(),
-                PreviewCard(),
-                PreviewCard(),
-                PreviewCard(),
+                for (int i = 0; i < products.length - 6; i++)
+                  PreviewCard(
+                    imageUrl: products[i].url,
+                    sellerName: products[i].sellerName,
+                    nftName: products[i].nftName,
+                  )
               ],
             ),
           ],

@@ -5,8 +5,14 @@ import 'custom_card.dart';
 import 'heart_widget.dart';
 
 class PreviewCard extends StatelessWidget {
+  final String imageUrl;
+  final String sellerName;
+  final String nftName;
   const PreviewCard({
     Key? key,
+    required this.imageUrl,
+    required this.sellerName,
+    required this.nftName,
   }) : super(key: key);
 
   @override
@@ -22,18 +28,18 @@ class PreviewCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
-                  'assets/images/nft1_artsy.png',
+                  imageUrl,
                   width: 141,
                 ),
                 AppSizes.gapH12,
                 Text(
-                  'Los Moertos World',
+                  nftName,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  'Senior Creator',
+                  sellerName,
                   style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
                 ),
               ],

@@ -42,53 +42,53 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         items: [
           BottomNavigationBarItem(
             icon: IconDisplay(
-              path: AppAssets.icon_inactive_dasboard,
+              path: AppAssets.iconInactiveDasboard,
             ),
             activeIcon: IconDisplay(
-              path: AppAssets.icon_active_dasboard,
+              path: AppAssets.iconActiveDasboard,
             ),
             label: AppString.home,
-            backgroundColor: AppColor.primary_darker,
+            backgroundColor: AppColor.primaryDarker,
           ),
           BottomNavigationBarItem(
             icon: IconDisplay(
-              path: AppAssets.icon_inactive_find,
+              path: AppAssets.iconInactiveFind,
             ),
             activeIcon: IconDisplay(
-              path: AppAssets.icon_active_find,
+              path: AppAssets.iconActiveFind,
             ),
             label: AppString.discover,
-            backgroundColor: AppColor.primary_darker,
+            backgroundColor: AppColor.primaryDarker,
           ),
           BottomNavigationBarItem(
             icon: IconDisplay(
-              path: AppAssets.icon_inactive_wallet,
+              path: AppAssets.iconInactiveWallet,
             ),
             activeIcon: IconDisplay(
-              path: AppAssets.icon_active_wallet,
+              path: AppAssets.iconActiveWallet,
             ),
             label: AppString.wallet,
-            backgroundColor: AppColor.primary_darker,
+            backgroundColor: AppColor.primaryDarker,
           ),
           BottomNavigationBarItem(
             icon: IconDisplay(
-              path: AppAssets.icon_inactive_heart,
+              path: AppAssets.iconInactiveHeart,
             ),
             activeIcon: IconDisplay(
-              path: AppAssets.icon_active_heart,
+              path: AppAssets.iconActiveHeart,
             ),
             label: AppString.wistlist,
-            backgroundColor: AppColor.primary_darker,
+            backgroundColor: AppColor.primaryDarker,
           ),
           BottomNavigationBarItem(
             icon: IconDisplay(
-              path: AppAssets.icon_inactive_user,
+              path: AppAssets.iconInactiveUser,
             ),
             activeIcon: IconDisplay(
-              path: AppAssets.icon_active_user,
+              path: AppAssets.iconActiveUser,
             ),
             label: AppString.account,
-            backgroundColor: AppColor.primary_darker,
+            backgroundColor: AppColor.primaryDarker,
           ),
         ],
       ),

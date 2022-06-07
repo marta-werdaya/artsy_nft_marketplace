@@ -14,7 +14,7 @@ class OnBoarding extends StatelessWidget {
       body: Stack(
         children: [
           Image(
-            image: AssetImage(AppAssets.image_onBoarding),
+            image: AssetImage(AppAssets.imageOnBoarding),
           ),
           Container(
             height: MediaQuery.of(context).size.height,
