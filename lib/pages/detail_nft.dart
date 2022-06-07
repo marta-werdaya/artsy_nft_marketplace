@@ -1,17 +1,24 @@
-import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
-import 'package:artsy_nft_marketplace/widgets/custom_card.dart';
-import 'package:artsy_nft_marketplace/widgets/glassmorphism.dart';
 import 'package:artsy_nft_marketplace/widgets/heart_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/app_colors.dart';
+import '../data/k_test_product.dart';
+import '../widgets/countdown_widget.dart';
+import '../widgets/detail_banner.dart';
+import '../widgets/profile_info.dart';
 
 class DetailNFT extends StatelessWidget {
-  const DetailNFT({Key? key}) : super(key: key);
-
+  final productId;
+  const DetailNFT({
+    Key? key,
+    required this.productId,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    print(productId);
+    final product =
+        kTestProducts.firstWhere((product) => product.id == productId);
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -29,7 +36,9 @@ class DetailNFT extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DetailBanner(),
+            DetailBanner(
+              product: product,
+            ),
             AppSizes.gapH104,
             CountDownWidget(),
             ProfileInfo(),
@@ -49,215 +58,6 @@ class DetailNFT extends StatelessWidget {
               ),
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class ProfileInfo extends StatelessWidget {
-  const ProfileInfo({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-          left: AppSizes.p24, right: AppSizes.p24, bottom: AppSizes.p16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Shinsei Galverse',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, fontSize: AppSizes.p16),
-              ),
-              AppSizes.gapH16,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage(AppAssets.imageAvatar1),
-                    backgroundColor: AppColor.secondary,
-                  ),
-                  AppSizes.gapW12,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Shinsei Galverse',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: AppSizes.p12,
-                        ),
-                      ),
-                      Text(
-                        '190.5K Followers',
-                        style: TextStyle(
-                          fontSize: AppSizes.p12,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              )
-            ],
-          ),
-          OutlinedButton(
-            onPressed: () {},
-            child: Text('Follow'),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CountDownWidget extends StatelessWidget {
-  const CountDownWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomCard(
-      margin: EdgeInsets.only(
-          left: AppSizes.p24, right: AppSizes.p24, bottom: AppSizes.p32),
-      child: Container(
-          padding: EdgeInsets.symmetric(
-              vertical: AppSizes.p12, horizontal: AppSizes.p24),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Current Bid',
-                    style: TextStyle(fontSize: AppSizes.p12),
-                  ),
-                  Text(
-                    '0.1250 ETH',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: AppSizes.p16,
-                    ),
-                  ),
-                ],
-              ),
-              CountDownBid()
-            ],
-          )),
-    );
-  }
-}
-
-class DetailBanner extends StatelessWidget {
-  const DetailBanner({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.bottomCenter,
-      clipBehavior: Clip.none,
-      children: [
-        Image.asset(AppAssets.imageNft1),
-        GlassMorphism(
-          child: Container(),
-          height: 360,
-          width: double.infinity,
-        ),
-
-        // Image NFT
-        Positioned(
-          bottom: -72,
-          child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppSizes.p4),
-                border: Border.all(
-                  color: AppColor.white,
-                  width: AppSizes.p05,
-                ),
-              ),
-              child: Image.asset(
-                AppAssets.imageNft1,
-                height: 294,
-              )),
-        ),
-      ],
-    );
-  }
-}
-
-class CountDownBid extends StatelessWidget {
-  const CountDownBid({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        TimeBox(),
-        TimeTicker(),
-        TimeBox(),
-        TimeTicker(),
-        TimeBox(),
-      ],
-    );
-  }
-}
-
-class TimeTicker extends StatelessWidget {
-  const TimeTicker({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSizes.p4),
-      child: Text(
-        ':',
-        style: TextStyle(
-          fontSize: AppSizes.p16,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
-  }
-}
-
-class TimeBox extends StatelessWidget {
-  const TimeBox({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      height: AppSizes.p48,
-      width: AppSizes.p48,
-      decoration: BoxDecoration(
-        color: AppColor.inactive,
-        borderRadius: BorderRadius.circular(
-          AppSizes.p4,
-        ),
-      ),
-      child: Text(
-        '19',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: AppSizes.p16,
         ),
       ),
     );

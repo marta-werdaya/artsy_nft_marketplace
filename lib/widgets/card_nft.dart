@@ -1,3 +1,4 @@
+import 'package:artsy_nft_marketplace/model/product_model.dart';
 import 'package:artsy_nft_marketplace/pages/detail_nft.dart';
 import 'package:flutter/material.dart';
 
@@ -7,15 +8,13 @@ import '../constant/app_string.dart';
 import 'custom_card.dart';
 import 'glassmorphism.dart';
 
+// TODO: implements bottom sheet to enter amount of bid
 class CardNFT extends StatelessWidget {
-  final String imageUrl;
-  final double price;
-  final String nftName;
+  final ProductModel product;
+
   const CardNFT({
     Key? key,
-    required this.imageUrl,
-    required this.price,
-    required this.nftName,
+    required this.product,
   }) : super(key: key);
 
   @override
@@ -23,7 +22,13 @@ class CardNFT extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: ((context) => DetailNFT())));
+          context,
+          MaterialPageRoute(
+            builder: ((context) => DetailNFT(
+                  productId: product.id,
+                )),
+          ),
+        );
       },
       child: Stack(
         children: [
@@ -33,7 +38,7 @@ class CardNFT extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(AppSizes.p8),
               child: Image.asset(
-                imageUrl,
+                product.imageUrl,
               ),
             ),
           ),
@@ -53,7 +58,7 @@ class CardNFT extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          nftName,
+                          product.nftName,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: AppSizes.p20,
@@ -61,7 +66,7 @@ class CardNFT extends StatelessWidget {
                         ),
                         AppSizes.gapH20,
                         Text(
-                          '$price ETH',
+                          '${product.price} ETH',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: AppSizes.p16,

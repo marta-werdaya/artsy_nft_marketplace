@@ -1,12 +1,19 @@
-import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
 import 'custom_card.dart';
 
 class ListTransaction extends StatelessWidget {
+  final String imageUrl;
+  final String nftName;
+  final double price;
+  final String sellerName;
   const ListTransaction({
     Key? key,
+    required this.imageUrl,
+    required this.nftName,
+    required this.price,
+    required this.sellerName,
   }) : super(key: key);
 
   @override
@@ -25,7 +32,7 @@ class ListTransaction extends StatelessWidget {
             Row(
               children: [
                 Image.asset(
-                  AppAssets.imageNft1,
+                  imageUrl,
                   width: AppSizes.p48,
                 ),
                 // Title and price
@@ -36,12 +43,12 @@ class ListTransaction extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Gigantopus',
+                        nftName,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('9.60 ETH'),
+                      Text(sellerName),
                     ],
                   ),
                 ),
@@ -50,7 +57,7 @@ class ListTransaction extends StatelessWidget {
 
             // Button
             Text(
-              '0.1250 ETH',
+              '$price ETH',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: AppSizes.p16,

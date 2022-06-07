@@ -8,11 +8,13 @@ class PreviewCard extends StatelessWidget {
   final String imageUrl;
   final String sellerName;
   final String nftName;
+  final bool isHeartEnable;
   const PreviewCard({
     Key? key,
     required this.imageUrl,
     required this.sellerName,
     required this.nftName,
+    this.isHeartEnable = true,
   }) : super(key: key);
 
   @override
@@ -44,7 +46,7 @@ class PreviewCard extends StatelessWidget {
                 ),
               ],
             ),
-            HeartWidget(),
+            isHeartEnable ? HeartWidget() : SizedBox(),
           ],
         ),
       ),

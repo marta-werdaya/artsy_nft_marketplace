@@ -21,9 +21,7 @@ class TrendingNFT extends StatelessWidget {
         children: [
           for (int i = 2; i < products.length - 3; i++)
             CardNFT(
-              imageUrl: products[i].url,
-              price: products[i].price,
-              nftName: products[i].nftName,
+              product: products[i],
             )
         ],
       ),

@@ -114,9 +114,10 @@ class ProfilePage extends StatelessWidget {
                     children: [
                       for (int i = 6; i < products.length; i++)
                         PreviewCard(
-                          imageUrl: products[i].url,
+                          imageUrl: products[i].imageUrl,
                           sellerName: products[i].sellerName,
                           nftName: products[i].nftName,
+                          isHeartEnable: false,
                         )
                     ],
                   )

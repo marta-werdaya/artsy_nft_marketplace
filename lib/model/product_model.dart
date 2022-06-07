@@ -1,13 +1,13 @@
-class Product {
+class ProductModel {
   final int id;
-  final String url;
+  final String imageUrl;
   final String sellerName;
   final String nftName;
   final double price;
 
-  const Product({
+  const ProductModel({
     required this.id,
-    required this.url,
+    required this.imageUrl,
     required this.sellerName,
     required this.nftName,
     required this.price,
