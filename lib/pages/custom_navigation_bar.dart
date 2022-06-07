@@ -86,7 +86,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
             activeIcon: IconDisplay(
               path: IconPath.active_user,
             ),
-            label: 'User',
+            label: 'Account',
             backgroundColor: ThemeColor.primary_darker,
           ),
         ],

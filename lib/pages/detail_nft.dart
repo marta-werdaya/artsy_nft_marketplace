@@ -35,7 +35,8 @@ class DetailNFT extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
               child: Text(
-                  'Amet minim mollit nAmet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat Amet minim mollit nAmet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. '),
+                'Amet minim mollit nAmet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat Amet minim mollit nAmet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. ',
+              ),
             ),
             Container(
               width: double.infinity,
