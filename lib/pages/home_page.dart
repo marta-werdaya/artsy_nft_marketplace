@@ -1,7 +1,7 @@
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
-import 'package:artsy_nft_marketplace/theme/theme_color.dart';
 import 'package:flutter/material.dart';
 
+import '../constant/app_colors.dart';
 import '../widgets/category_widget.dart';
 import '../widgets/logo_app_bar.dart';
 import '../widgets/search_bar.dart';
@@ -54,7 +54,7 @@ class WelcomeText extends StatelessWidget {
           Text(
             'Welcome Back',
             style: TextStyle(
-                fontWeight: FontWeight.w300, color: ThemeColor.inactive),
+                fontWeight: FontWeight.w300, color: AppColor.inactive),
           ),
           Text(
             'Marta',

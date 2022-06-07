@@ -1,5 +1,5 @@
+import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
-import 'package:artsy_nft_marketplace/constant/icon_path.dart';
 import 'package:artsy_nft_marketplace/widgets/title_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class WalletPage extends StatelessWidget {
         actions: [
           IconButton(
             icon: IconDisplay(
-              path: IconPath.active_add,
+              path: AppAssets.icon_active_add,
             ),
             tooltip: 'Open shopping cart',
             onPressed: () {

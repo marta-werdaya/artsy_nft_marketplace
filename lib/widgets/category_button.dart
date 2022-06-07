@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
-import '../constant/button_styles.dart';
+import '../constant/app_buttons.dart';
 
 class CategoryButton extends StatelessWidget {
   final bool isActive;
@@ -19,9 +19,8 @@ class CategoryButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(),
         child: ElevatedButton(
-          style: isActive
-              ? StyleButton.activeCategory
-              : StyleButton.inactiveCategory,
+          style:
+              isActive ? AppButton.activeCategory : AppButton.inactiveCategory,
           onPressed: () {},
           child: Text(title),
         ),

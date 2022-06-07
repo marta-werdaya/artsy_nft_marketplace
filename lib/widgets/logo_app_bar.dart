@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
-import '../constant/asset_constant.dart';
+import '../constant/app_assets.dart';
 
 class LogoAppBar extends StatelessWidget implements PreferredSize {
   const LogoAppBar({
@@ -23,7 +23,7 @@ class LogoAppBar extends StatelessWidget implements PreferredSize {
           child: Row(
             children: [
               Image.asset(
-                AssetConstants.iconArtsy,
+                AppAssets.iconArtsy,
                 width: AppSizes.p32,
               ),
               AppSizes.gapW8,

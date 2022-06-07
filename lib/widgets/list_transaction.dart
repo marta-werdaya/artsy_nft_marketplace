@@ -1,4 +1,4 @@
-import 'package:artsy_nft_marketplace/constant/image_path.dart';
+import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
@@ -25,7 +25,7 @@ class ListTransaction extends StatelessWidget {
             Row(
               children: [
                 Image.asset(
-                  ImagePath.nft1,
+                  AppAssets.image_nft1,
                   width: AppSizes.p48,
                 ),
                 // Title and price

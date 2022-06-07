@@ -1,8 +1,8 @@
+import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
-import 'package:artsy_nft_marketplace/constant/image_path.dart';
-import 'package:artsy_nft_marketplace/theme/theme_color.dart';
 import 'package:flutter/material.dart';
 
+import '../constant/app_colors.dart';
 import 'custom_navigation_bar.dart';
 
 class OnBoarding extends StatelessWidget {
@@ -14,7 +14,7 @@ class OnBoarding extends StatelessWidget {
       body: Stack(
         children: [
           Image(
-            image: AssetImage(ImagePath.onBoarding),
+            image: AssetImage(AppAssets.image_onBoarding),
           ),
           Container(
             height: MediaQuery.of(context).size.height,
@@ -28,8 +28,8 @@ class OnBoarding extends StatelessWidget {
                   AppSizes.p05,
                 ],
                 colors: [
-                  ThemeColor.bg.withOpacity(AppSizes.pZero),
-                  ThemeColor.bg,
+                  AppColor.bg.withOpacity(AppSizes.pZero),
+                  AppColor.bg,
                 ],
               ),
             ),
@@ -44,7 +44,7 @@ class OnBoarding extends StatelessWidget {
                   'Best NFT Marketplace',
                   style: Theme.of(context).textTheme.headline4?.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: ThemeColor.white,
+                        color: AppColor.white,
                       ),
                 ),
                 Text('Buy, sell, and collect the best NFT around the world'),

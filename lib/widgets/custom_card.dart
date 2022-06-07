@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constant/app_colors.dart';
 import '../constant/app_sizes.dart';
-import '../theme/theme_color.dart';
 
 class CustomCard extends StatelessWidget {
   final Widget child;
@@ -11,7 +11,7 @@ class CustomCard extends StatelessWidget {
     Key? key,
     required this.child,
     required this.margin,
-    this.color = ThemeColor.primary_shade,
+    this.color = AppColor.primary_shade,
   }) : super(key: key);
 
   @override
@@ -22,7 +22,7 @@ class CustomCard extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.circular(AppSizes.p4),
         border: Border.all(
-          color: ThemeColor.white,
+          color: AppColor.white,
           width: AppSizes.p05,
         ),
       ),

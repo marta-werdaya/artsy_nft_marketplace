@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constant/app_colors.dart';
 import '../constant/app_sizes.dart';
-import '../theme/theme_color.dart';
 import 'custom_card.dart';
 
 class ListCard extends StatelessWidget {
@@ -25,7 +25,7 @@ class ListCard extends StatelessWidget {
             Row(
               children: [
                 CircleAvatar(
-                  backgroundColor: ThemeColor.secondary,
+                  backgroundColor: AppColor.secondary,
                   backgroundImage: AssetImage('assets/images/peep_5.png'),
                   radius: AppSizes.p24,
                 ),

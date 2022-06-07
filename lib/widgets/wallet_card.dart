@@ -1,8 +1,8 @@
-import 'package:artsy_nft_marketplace/constant/icon_path.dart';
-import 'package:artsy_nft_marketplace/theme/theme_color.dart';
+import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:artsy_nft_marketplace/widgets/wallet_info.dart';
 import 'package:flutter/material.dart';
 
+import '../constant/app_colors.dart';
 import '../constant/app_sizes.dart';
 import 'custom_card.dart';
 
@@ -14,7 +14,7 @@ class WalletCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomCard(
-      color: ThemeColor.primary,
+      color: AppColor.primary,
       margin: EdgeInsets.only(bottom: AppSizes.p32),
       child: Column(
         children: [
@@ -49,7 +49,7 @@ class WalletCard extends StatelessWidget {
 
                 // Logo ETH
                 Image.asset(
-                  IconPath.logo_eth,
+                  AppAssets.icon_logo_eth,
                   height: AppSizes.p64,
                 )
               ],
@@ -57,7 +57,7 @@ class WalletCard extends StatelessWidget {
           ),
           Divider(
             thickness: 1,
-            color: ThemeColor.white,
+            color: AppColor.white,
           ),
           Padding(
             padding: EdgeInsets.only(

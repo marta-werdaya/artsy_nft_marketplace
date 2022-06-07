@@ -1,10 +1,11 @@
+import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
-import 'package:artsy_nft_marketplace/constant/image_path.dart';
-import 'package:artsy_nft_marketplace/theme/theme_color.dart';
 import 'package:artsy_nft_marketplace/widgets/custom_card.dart';
 import 'package:artsy_nft_marketplace/widgets/glassmorphism.dart';
 import 'package:artsy_nft_marketplace/widgets/heart_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../constant/app_colors.dart';
 
 class DetailNFT extends StatelessWidget {
   const DetailNFT({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class DetailNFT extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text('Detail NFT'),
-        backgroundColor: ThemeColor.transparent,
+        backgroundColor: AppColor.transparent,
         excludeHeaderSemantics: true,
         actions: [
           Padding(
@@ -81,8 +82,8 @@ class ProfileInfo extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    backgroundImage: AssetImage(ImagePath.avatar1),
-                    backgroundColor: ThemeColor.secondary,
+                    backgroundImage: AssetImage(AppAssets.image_avatar1),
+                    backgroundColor: AppColor.secondary,
                   ),
                   AppSizes.gapW12,
                   Column(
@@ -167,7 +168,7 @@ class DetailBanner extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       clipBehavior: Clip.none,
       children: [
-        Image.asset(ImagePath.nft1),
+        Image.asset(AppAssets.image_nft1),
         GlassMorphism(
           child: Container(),
           height: 360,
@@ -181,12 +182,12 @@ class DetailBanner extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppSizes.p4),
                 border: Border.all(
-                  color: ThemeColor.white,
+                  color: AppColor.white,
                   width: AppSizes.p05,
                 ),
               ),
               child: Image.asset(
-                ImagePath.nft1,
+                AppAssets.image_nft1,
                 height: 294,
               )),
         ),
@@ -247,7 +248,7 @@ class TimeBox extends StatelessWidget {
       height: AppSizes.p48,
       width: AppSizes.p48,
       decoration: BoxDecoration(
-        color: ThemeColor.inactive,
+        color: AppColor.inactive,
         borderRadius: BorderRadius.circular(
           AppSizes.p4,
         ),

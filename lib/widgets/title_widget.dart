@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constant/app_colors.dart';
 import '../constant/app_sizes.dart';
-import '../theme/theme_color.dart';
 
 class TitleWidget extends StatelessWidget {
   final String title;
@@ -40,7 +40,7 @@ class TitleWidget extends StatelessWidget {
               ? Text(
                   'See All',
                   style: TextStyle(
-                    color: ThemeColor.secondary,
+                    color: AppColor.secondary,
                   ),
                 )
               : SizedBox(),

@@ -1,12 +1,13 @@
-import 'package:artsy_nft_marketplace/constant/icon_path.dart';
+import 'package:artsy_nft_marketplace/constant/app_assets.dart';
+import 'package:artsy_nft_marketplace/constant/app_string.dart';
 import 'package:artsy_nft_marketplace/pages/discover_page.dart';
 import 'package:artsy_nft_marketplace/pages/home_page.dart';
 import 'package:artsy_nft_marketplace/pages/profile_page.dart';
 import 'package:artsy_nft_marketplace/pages/wallet_page.dart';
 import 'package:artsy_nft_marketplace/pages/wishlist_page.dart';
-import 'package:artsy_nft_marketplace/theme/theme_color.dart';
 import 'package:flutter/material.dart';
 
+import '../constant/app_colors.dart';
 import '../widgets/icon_display.dart';
 
 class CustomNavigationBar extends StatefulWidget {
@@ -33,61 +34,61 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
         currentIndex: currentIndex,
-        unselectedItemColor: ThemeColor.inactive,
-        selectedItemColor: ThemeColor.primary,
+        unselectedItemColor: AppColor.inactive,
+        selectedItemColor: AppColor.primary,
         onTap: (index) => setState(() {
           currentIndex = index;
         }),
         items: [
           BottomNavigationBarItem(
             icon: IconDisplay(
-              path: IconPath.inactive_dasboard,
+              path: AppAssets.icon_inactive_dasboard,
             ),
             activeIcon: IconDisplay(
-              path: IconPath.active_dasboard,
+              path: AppAssets.icon_active_dasboard,
             ),
-            label: 'Home',
-            backgroundColor: ThemeColor.primary_darker,
+            label: AppString.home,
+            backgroundColor: AppColor.primary_darker,
           ),
           BottomNavigationBarItem(
             icon: IconDisplay(
-              path: IconPath.inactive_find,
+              path: AppAssets.icon_inactive_find,
             ),
             activeIcon: IconDisplay(
-              path: IconPath.active_find,
+              path: AppAssets.icon_active_find,
             ),
-            label: 'Find',
-            backgroundColor: ThemeColor.primary_darker,
+            label: AppString.discover,
+            backgroundColor: AppColor.primary_darker,
           ),
           BottomNavigationBarItem(
             icon: IconDisplay(
-              path: IconPath.inactive_wallet,
+              path: AppAssets.icon_inactive_wallet,
             ),
             activeIcon: IconDisplay(
-              path: IconPath.active_wallet,
+              path: AppAssets.icon_active_wallet,
             ),
-            label: 'Wallet',
-            backgroundColor: ThemeColor.primary_darker,
+            label: AppString.wallet,
+            backgroundColor: AppColor.primary_darker,
           ),
           BottomNavigationBarItem(
             icon: IconDisplay(
-              path: IconPath.inactive_heart,
+              path: AppAssets.icon_inactive_heart,
             ),
             activeIcon: IconDisplay(
-              path: IconPath.active_heart,
+              path: AppAssets.icon_active_heart,
             ),
-            label: 'Wistlist',
-            backgroundColor: ThemeColor.primary_darker,
+            label: AppString.wistlist,
+            backgroundColor: AppColor.primary_darker,
           ),
           BottomNavigationBarItem(
             icon: IconDisplay(
-              path: IconPath.inactive_user,
+              path: AppAssets.icon_inactive_user,
             ),
             activeIcon: IconDisplay(
-              path: IconPath.active_user,
+              path: AppAssets.icon_active_user,
             ),
-            label: 'Account',
-            backgroundColor: ThemeColor.primary_darker,
+            label: AppString.account,
+            backgroundColor: AppColor.primary_darker,
           ),
         ],
       ),

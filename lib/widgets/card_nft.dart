@@ -1,10 +1,10 @@
-import 'package:artsy_nft_marketplace/constant/image_path.dart';
+import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:artsy_nft_marketplace/pages/detail_nft.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
-import '../constant/button_styles.dart';
-import '../constant/string_constants.dart';
+import '../constant/app_buttons.dart';
+import '../constant/app_string.dart';
 import 'custom_card.dart';
 import 'glassmorphism.dart';
 
@@ -28,7 +28,7 @@ class CardNFT extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(AppSizes.p8),
               child: Image.asset(
-                ImagePath.nft1,
+                AppAssets.image_nft1,
               ),
             ),
           ),
@@ -48,7 +48,7 @@ class CardNFT extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          StrigConstants.trendingNFT,
+                          AppString.trendingNFT,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: AppSizes.p20,
@@ -56,14 +56,14 @@ class CardNFT extends StatelessWidget {
                         ),
                         AppSizes.gapH20,
                         Text(
-                          StrigConstants.price,
+                          AppString.price,
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: AppSizes.p16,
                           ),
                         ),
                         Text(
-                          StrigConstants.highetBid,
+                          AppString.highetBid,
                           style: TextStyle(
                             fontWeight: FontWeight.w200,
                             fontSize: AppSizes.p12,
@@ -73,7 +73,7 @@ class CardNFT extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {},
-                      style: StyleButton.placeABid,
+                      style: AppButton.placeABid,
                       child: Text('Place a Bid'),
                     )
                   ],

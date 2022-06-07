@@ -4,7 +4,7 @@ import 'package:artsy_nft_marketplace/widgets/preview_card.dart';
 import 'package:artsy_nft_marketplace/widgets/title_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../theme/theme_color.dart';
+import '../constant/app_colors.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -39,12 +39,12 @@ class ProfilePage extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(AppSizes.p127),
                       border: Border.all(
-                        color: ThemeColor.bg,
+                        color: AppColor.bg,
                         width: AppSizes.p4,
                       ),
                     ),
                     child: CircleAvatar(
-                      backgroundColor: ThemeColor.secondary,
+                      backgroundColor: AppColor.secondary,
                       backgroundImage: AssetImage('assets/images/peep_5.png'),
                       radius: AppSizes.p64,
                     ),
@@ -97,7 +97,7 @@ class ProfilePage extends StatelessWidget {
                     'Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt sint deserunt ut voluptate aute id deserunt nisi.',
                     style: TextStyle(
                       fontWeight: FontWeight.w100,
-                      color: ThemeColor.white.withOpacity(AppSizes.p05),
+                      color: AppColor.white.withOpacity(AppSizes.p05),
                     ),
                   ),
                   AppSizes.gapH32,

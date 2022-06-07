@@ -1,5 +1,5 @@
+import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
-import 'package:artsy_nft_marketplace/constant/icon_path.dart';
 import 'package:flutter/material.dart';
 
 class HeartWidget extends StatefulWidget {
@@ -23,7 +23,7 @@ class _HeartWidgetState extends State<HeartWidget> {
       child: Padding(
         padding: EdgeInsets.all(AppSizes.p4),
         child: Image.asset(
-          isLike ? IconPath.heart_red : IconPath.heart_white,
+          isLike ? AppAssets.icon_heart_red : AppAssets.icon_heart_white,
           height: AppSizes.p28,
         ),
       ),
