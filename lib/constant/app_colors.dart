@@ -10,4 +10,5 @@ class AppColor {
   static const Color danger = Color(0xffE34539);
   static const Color transparent = Colors.transparent;
   static const Color primaryDarker = Color(0xff181D23);
+  static const Color success = Color(0xff2FB18E);
 }

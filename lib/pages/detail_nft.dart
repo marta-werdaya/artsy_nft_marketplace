@@ -8,17 +8,24 @@ import '../widgets/countdown_widget.dart';
 import '../widgets/detail_banner.dart';
 import '../widgets/profile_info.dart';
 
-class DetailNFT extends StatelessWidget {
+class DetailNFT extends StatefulWidget {
   final productId;
   const DetailNFT({
     Key? key,
     required this.productId,
   }) : super(key: key);
+
+  @override
+  State<DetailNFT> createState() => _DetailNFTState();
+}
+
+class _DetailNFTState extends State<DetailNFT> {
+  bool closeTheBid = false;
   @override
   Widget build(BuildContext context) {
-    print(productId);
+    print(widget.productId);
     final product =
-        kTestProducts.firstWhere((product) => product.id == productId);
+        kTestProducts.firstWhere((product) => product.id == widget.productId);
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -40,12 +47,18 @@ class DetailNFT extends StatelessWidget {
               product: product,
             ),
             AppSizes.gapH104,
-            CountDownWidget(),
+            CountDownWidget(
+              lockTheBid: (value) {
+                setState(() {
+                  closeTheBid = value;
+                });
+              },
+            ),
             ProfileInfo(),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
               child: Text(
-                'Amet minim mollit nAmet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat Amet minim mollit nAmet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. ',
+                'jika coountdown telah mencapa "00 : 00 : 00" maka tombol akan di disable, countdown menjadi text time is up!!! dan curent bid akan berubah menjadi final bid.  ',
               ),
             ),
             Container(
@@ -53,7 +66,7 @@ class DetailNFT extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                   horizontal: AppSizes.p24, vertical: AppSizes.p16),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: closeTheBid ? null : () {},
                 child: Text('Place a Bid'),
               ),
             )
