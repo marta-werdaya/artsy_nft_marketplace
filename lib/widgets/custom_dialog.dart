@@ -58,7 +58,7 @@ class CustomDialog extends StatelessWidget {
               Container(
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.only(
-                    bottom: AppSizes.p64,
+                    // bottom: AppSizes.p64,
                     left: AppSizes.p24,
                     top: AppSizes.p8,
                     right: AppSizes.p24),
@@ -69,7 +69,22 @@ class CustomDialog extends StatelessWidget {
                   ),
                   color: AppColor.primaryDarker,
                 ),
-                child: Text(message),
+                child: Column(
+                  children: [
+                    Text(message),
+                    AppSizes.gapH32,
+                    Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: OutlinedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('Close'),
+                      ),
+                    ),
+                    AppSizes.gapH12,
+                  ],
+                ),
               ),
             ],
           ),
