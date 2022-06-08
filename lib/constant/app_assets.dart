@@ -10,7 +10,16 @@ class AppAssets {
   static const imageNft8 = 'assets/images/bid_image_8.png';
   static const imageNft9 = 'assets/images/bid_image_9.png';
   static const imageNft10 = 'assets/images/bid_image_10.png';
-  static const imageAvatar1 = 'assets/images/peep_5.png';
+  static const imageAvatar1 = 'assets/images/avatar_1.png';
+  static const imageAvatar2 = 'assets/images/avatar_2.png';
+  static const imageAvatar3 = 'assets/images/avatar_3.png';
+  static const imageAvatar4 = 'assets/images/avatar_4.png';
+  static const imageAvatar5 = 'assets/images/avatar_5.png';
+  static const imageAvatar6 = 'assets/images/avatar_6.png';
+  static const imageAvatar7 = 'assets/images/avatar_7.png';
+  static const imageAvatar8 = 'assets/images/avatar_8.png';
+  static const imageAvatar9 = 'assets/images/avatar_9.png';
+  static const imageAvatar10 = 'assets/images/avatar_10.png';
   static const imageOnBoarding = 'assets/images/onboarding_image.png';
   static const iconActiveDasboard = 'assets/icons/active_dashboard_icon.png';
   static const iconActiveFind = 'assets/icons/active_find_icon.png';

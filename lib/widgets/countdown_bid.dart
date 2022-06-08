@@ -51,6 +51,7 @@ class _CountDownBidState extends State<CountDownBid> {
   @override
   void dispose() {
     super.dispose();
+    timer?.cancel();
   }
 
   @override

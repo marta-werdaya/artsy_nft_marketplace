@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../constant/app_colors.dart';
 import '../constant/app_sizes.dart';
 import 'custom_card.dart';
 
 class ListCard extends StatelessWidget {
+  final String name;
+  final double revenue;
+  final String imageUrl;
   const ListCard({
     Key? key,
+    required this.name,
+    required this.revenue,
+    required this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -25,8 +30,7 @@ class ListCard extends StatelessWidget {
             Row(
               children: [
                 CircleAvatar(
-                  backgroundColor: AppColor.secondary,
-                  backgroundImage: AssetImage('assets/images/peep_5.png'),
+                  backgroundImage: AssetImage(imageUrl),
                   radius: AppSizes.p24,
                 ),
                 // Title and price
@@ -37,12 +41,12 @@ class ListCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Gigantopus',
+                        name,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text('9.60 ETH'),
+                      Text('$revenue ETH'),
                     ],
                   ),
                 ),

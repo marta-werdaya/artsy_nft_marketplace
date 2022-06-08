@@ -4,6 +4,7 @@ class ProductModel {
   final String sellerName;
   final String nftName;
   final double price;
+  final int sellerId;
 
   const ProductModel({
     required this.id,
@@ -11,5 +12,6 @@ class ProductModel {
     required this.sellerName,
     required this.nftName,
     required this.price,
+    required this.sellerId,
   });
 }

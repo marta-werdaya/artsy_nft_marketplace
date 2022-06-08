@@ -9,6 +9,7 @@ const kTestProducts = [
     sellerName: 'Devata Collection',
     nftName: 'turn it down',
     price: 0.89,
+    sellerId: 1,
   ),
   ProductModel(
     id: 2,
@@ -16,6 +17,7 @@ const kTestProducts = [
     sellerName: 'Devata Collection',
     nftName: 'buble burst',
     price: 0.29,
+    sellerId: 1,
   ),
   ProductModel(
     id: 3,
@@ -23,6 +25,7 @@ const kTestProducts = [
     sellerName: 'Borneo Collection',
     nftName: 'Pelung kuning #1',
     price: 1.7,
+    sellerId: 2,
   ),
   ProductModel(
     id: 4,
@@ -30,6 +33,7 @@ const kTestProducts = [
     sellerName: 'Borneo Collection',
     nftName: 'Pelung kuning #2',
     price: 0.34,
+    sellerId: 2,
   ),
   ProductModel(
     id: 5,
@@ -37,6 +41,7 @@ const kTestProducts = [
     sellerName: 'Batur Collection',
     nftName: 'Danu Anyar',
     price: 0.359,
+    sellerId: 3,
   ),
   ProductModel(
     id: 6,
@@ -44,6 +49,7 @@ const kTestProducts = [
     sellerName: 'Batur Collection',
     nftName: 'Barak Bing',
     price: 0.123,
+    sellerId: 3,
   ),
   ProductModel(
     id: 7,
@@ -51,6 +57,7 @@ const kTestProducts = [
     sellerName: 'Sanur Collection',
     nftName: 'Desa Kala Patra',
     price: 0.9,
+    sellerId: 4,
   ),
   ProductModel(
     id: 8,
@@ -58,19 +65,22 @@ const kTestProducts = [
     sellerName: 'Sanur Collection',
     nftName: 'Tilem Kapitu',
     price: 1.89,
+    sellerId: 4,
   ),
   ProductModel(
     id: 9,
     imageUrl: AppAssets.imageNft9,
-    sellerName: 'Devata Collection',
+    sellerName: 'Canggu Collection',
     nftName: 'Pink Gading #1',
     price: 0.89,
+    sellerId: 5,
   ),
   ProductModel(
     id: 10,
     imageUrl: AppAssets.imageNft10,
-    sellerName: 'Devata Collection',
+    sellerName: 'Canggu Collection',
     nftName: 'Pelung Kuning #3',
     price: 0.89,
+    sellerId: 5,
   ),
 ];
