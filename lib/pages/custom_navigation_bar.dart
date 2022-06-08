@@ -2,7 +2,7 @@ import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:artsy_nft_marketplace/constant/app_string.dart';
 import 'package:artsy_nft_marketplace/pages/discover_page.dart';
 import 'package:artsy_nft_marketplace/pages/home_page.dart';
-import 'package:artsy_nft_marketplace/pages/profile_page.dart';
+import 'package:artsy_nft_marketplace/pages/account_page.dart';
 import 'package:artsy_nft_marketplace/pages/wallet_page.dart';
 import 'package:artsy_nft_marketplace/pages/wishlist_page.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +27,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       DiscoverPage(),
       WalletPage(),
       WistlistPage(),
-      ProfilePage(),
+      AccountPage(),
     ];
     return Scaffold(
       body: pages[currentIndex],

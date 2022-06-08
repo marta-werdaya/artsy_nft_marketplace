@@ -1,4 +1,6 @@
+import 'package:artsy_nft_marketplace/constant/app_assets.dart';
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
+import 'package:artsy_nft_marketplace/pages/onboarding.dart';
 import 'package:artsy_nft_marketplace/widgets/glassmorphism.dart';
 import 'package:artsy_nft_marketplace/widgets/title_widget.dart';
 import 'package:flutter/material.dart';
@@ -7,8 +9,8 @@ import '../constant/app_colors.dart';
 import '../data/k_test_product.dart';
 import '../widgets/preview_card.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+class AccountPage extends StatelessWidget {
+  const AccountPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                     child: CircleAvatar(
                       backgroundColor: AppColor.secondary,
-                      backgroundImage: AssetImage('assets/images/peep_5.png'),
+                      backgroundImage: AssetImage(AppAssets.imageAvatar1),
                       radius: AppSizes.p64,
                     ),
                   ),
@@ -56,11 +58,27 @@ class ProfilePage extends StatelessWidget {
 
                 Positioned(
                   top: AppSizes.p48,
-                  child: Text(
-                    'Account',
-                    style: Theme.of(context).textTheme.titleLarge,
+                  child: Center(
+                    child: Text(
+                      'Account',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
                   ),
-                )
+                ),
+                Positioned(
+                  top: AppSizes.p48,
+                  right: AppSizes.p24,
+                  child: GestureDetector(
+                    onTap: () => Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: ((context) => OnBoardingPage()),
+                      ),
+                      (route) => false,
+                    ),
+                    child: Icon(Icons.logout),
+                  ),
+                ),
               ],
             ),
             AppSizes.gapH80,

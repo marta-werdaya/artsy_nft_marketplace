@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           shadowColor: AppColor.transparent,
         ),
       ),
-      home: OnBoarding(),
+      home: OnBoardingPage(),
     );
   }
 }

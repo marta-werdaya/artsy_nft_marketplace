@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import '../constant/app_colors.dart';
 import 'custom_navigation_bar.dart';
 
-class OnBoarding extends StatelessWidget {
-  const OnBoarding({Key? key}) : super(key: key);
+class OnBoardingPage extends StatelessWidget {
+  const OnBoardingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
