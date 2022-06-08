@@ -14,16 +14,18 @@ class WistlistPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('WistList'),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
+        padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
+        child: Container(
+          width: double.infinity,
           child: Column(
             children: [
               // SearchBar(),
               Wrap(
-                spacing: 20,
-                runSpacing: 20,
+                spacing: AppSizes.p10,
+                runSpacing: AppSizes.p10,
                 children: [
                   for (int i = 0; i < products.length - 6; i++)
                     PreviewCard(

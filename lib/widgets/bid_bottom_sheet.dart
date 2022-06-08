@@ -13,7 +13,7 @@ class BidBottomSheet extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        // mainAxisSize: MainAxisSize.min,
         children: [
           AppSizes.gapH16,
           Container(
@@ -25,6 +25,7 @@ class BidBottomSheet extends StatelessWidget {
           ),
           AppSizes.gapH64,
           TextFormField(
+            keyboardType: TextInputType.number,
             decoration: InputDecoration(
               hintText: 'Enter Amount of Bid',
             ),

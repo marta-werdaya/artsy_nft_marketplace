@@ -45,7 +45,7 @@ class PreviewCard extends StatelessWidget {
                 children: [
                   Image.asset(
                     imageUrl,
-                    width: 141,
+                    width: (MediaQuery.of(context).size.width - 92) / 2,
                   ),
                   AppSizes.gapH12,
                   Text(

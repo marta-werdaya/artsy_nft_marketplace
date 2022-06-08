@@ -1,14 +1,15 @@
 import 'package:artsy_nft_marketplace/model/product_model.dart';
 import 'package:artsy_nft_marketplace/pages/detail_nft.dart';
+import 'package:artsy_nft_marketplace/widgets/bid_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
+import '../constant/app_colors.dart';
 import '../constant/app_sizes.dart';
 import '../constant/app_buttons.dart';
 import '../constant/app_string.dart';
 import 'custom_card.dart';
 import 'glassmorphism.dart';
 
-// TODO: implements bottom sheet to enter amount of bid
 class CardNFT extends StatelessWidget {
   final ProductModel product;
 
@@ -82,7 +83,19 @@ class CardNFT extends StatelessWidget {
                       ],
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        showModalBottomSheet(
+                          backgroundColor: AppColor.bg,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(AppSizes.p8),
+                              topRight: Radius.circular(AppSizes.p8),
+                            ),
+                          ),
+                          context: context,
+                          builder: (context) => BidBottomSheet(),
+                        );
+                      },
                       style: AppButton.placeABid,
                       child: Text('Place a Bid'),
                     )

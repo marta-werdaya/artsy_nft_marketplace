@@ -85,7 +85,7 @@ class AccountPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -127,8 +127,8 @@ class AccountPage extends StatelessWidget {
                     isAddMargin: false,
                   ),
                   Wrap(
-                    spacing: AppSizes.p20,
-                    runSpacing: AppSizes.p20,
+                    spacing: AppSizes.p10,
+                    runSpacing: AppSizes.p10,
                     children: [
                       for (int i = 6; i < products.length; i++)
                         PreviewCard(

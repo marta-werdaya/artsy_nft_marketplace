@@ -42,6 +42,8 @@ class ListCard extends StatelessWidget {
                     children: [
                       Text(
                         name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
@@ -55,6 +57,9 @@ class ListCard extends StatelessWidget {
 
             // Button
             OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: AppSizes.p4, vertical: AppSizes.p4)),
               onPressed: () {},
               child: Text('Follow'),
             )
