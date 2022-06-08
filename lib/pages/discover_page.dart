@@ -24,6 +24,7 @@ class DiscoverPage extends StatelessWidget {
               children: [
                 for (int i = 0; i < products.length; i++)
                   PreviewCard(
+                    id: products[i].id,
                     imageUrl: products[i].imageUrl,
                     sellerName: products[i].sellerName,
                     nftName: products[i].nftName,

@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'dart:math';
 import 'package:artsy_nft_marketplace/constant/app_colors.dart';
 import 'package:artsy_nft_marketplace/widgets/time_box.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +20,13 @@ class CountDownBid extends StatefulWidget {
 }
 
 class _CountDownBidState extends State<CountDownBid> {
+  // FIX countdown
   // Duration duration = Duration(hours: 17, minutes: 08, seconds: 45);
-  Duration duration = Duration(seconds: 5);
+  // Random countdown hours
+  Duration duration = Duration(hours: Random().nextInt(24));
+  // Fix to test
+  // Duration duration = Duration(seconds: 3);
+
   Timer? timer;
   bool isEnd = false;
   @override

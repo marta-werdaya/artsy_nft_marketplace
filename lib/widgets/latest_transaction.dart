@@ -15,6 +15,7 @@ class LatestTransaction extends StatelessWidget {
       children: [
         for (int i = 4; i < products.length; i++)
           ListTransaction(
+            id: products[i].id,
             imageUrl: products[i].imageUrl,
             nftName: products[i].nftName,
             price: products[i].price,

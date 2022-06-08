@@ -1,4 +1,5 @@
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
+import 'package:artsy_nft_marketplace/data/k_test_seller.dart';
 import 'package:artsy_nft_marketplace/widgets/heart_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,8 @@ class _DetailNFTState extends State<DetailNFT> {
     print(widget.productId);
     final product =
         kTestProducts.firstWhere((product) => product.id == widget.productId);
+    final seller =
+        kTestSeller.firstWhere((seller) => seller.id == product.sellerId);
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -55,11 +58,16 @@ class _DetailNFTState extends State<DetailNFT> {
                 });
               },
             ),
-            ProfileInfo(),
+            ProfileInfo(
+              sellerName: seller.name,
+              nftName: product.nftName,
+              followers: seller.followers,
+              imageUrl: seller.imageUrl,
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
               child: Text(
-                'jika coountdown telah mencapai "00 : 00 : 00" maka tombol akan di disable, countdown menjadi text time is up!!! dan curent bid akan berubah menjadi final bid.  ',
+                'jika coountdown telah mencapai "00 : 00 : 00" maka tombol akan di disable, countdown menjadi text time is up!!! dan curent bid akan berubah menjadi final bid. Untuk mengatur waktu countdown pergi ke file countdown_bid.dart  ',
               ),
             ),
             Container(

@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../constant/app_assets.dart';
-import '../constant/app_colors.dart';
 import '../constant/app_sizes.dart';
 
 class ProfileInfo extends StatelessWidget {
+  final String sellerName;
+  final String nftName;
+  final double followers;
+  final String imageUrl;
   const ProfileInfo({
     Key? key,
+    required this.sellerName,
+    required this.nftName,
+    required this.followers,
+    required this.imageUrl,
   }) : super(key: key);
 
   @override
@@ -21,7 +27,7 @@ class ProfileInfo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Shinsei Galverse',
+                nftName,
                 style: TextStyle(
                     fontWeight: FontWeight.bold, fontSize: AppSizes.p16),
               ),
@@ -31,22 +37,22 @@ class ProfileInfo extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    backgroundImage: AssetImage(AppAssets.imageAvatar1),
-                    backgroundColor: AppColor.secondary,
+                    backgroundImage: AssetImage(imageUrl),
+                    // backgroundColor: AppColor.secondary,
                   ),
                   AppSizes.gapW12,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Shinsei Galverse',
+                        sellerName,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: AppSizes.p12,
                         ),
                       ),
                       Text(
-                        '190.5K Followers',
+                        '${followers}K Followers',
                         style: TextStyle(
                           fontSize: AppSizes.p12,
                         ),
