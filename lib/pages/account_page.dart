@@ -109,13 +109,12 @@ class AccountPage extends StatelessWidget {
                           showDialog(
                             context: context,
                             builder: (_) => CustomDialog(
-                              isSuccess: false,
                               message:
-                                  'Sorry, this feature is not implemented yet : (',
+                                  'ARTSY merupakan sebuah aplikasi marketplace untuk NFT yang dirancang dari tahap design UI, yang banyak terinspirasi dari dribble, serta implementasi feature sederhana tanpa API, dimana Aplikasi ini hanya menggunakan data dummy yang diakses secara singkronus. Namun demikian tetap memiliki data yang dinamis dan dengan tampilan UI yang menarik.',
                             ),
                           );
                         },
-                        child: Text('Edit'),
+                        child: Text('About App'),
                       ),
                     ],
                   ),

@@ -67,7 +67,7 @@ class _DetailNFTState extends State<DetailNFT> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
               child: Text(
-                'jika coountdown telah mencapai "00 : 00 : 00" maka tombol akan di disable, countdown menjadi text time is up!!! dan curent bid akan berubah menjadi final bid. Untuk mengatur waktu countdown pergi ke file countdown_bid.dart  ',
+                'jika coountdown telah mencapai "00 : 00 : 00" maka tombol akan di disable, countdown menjadi text "time is up!!!" dan "curent bid" akan berubah menjadi "FINAL BID". Untuk mengatur waktu countdown pergi ke file countdown_bid.dart secara default tiap masuk ke detail NFT akan digenerete waktu secara random dengan maximum di 24 jam.',
               ),
             ),
             Container(

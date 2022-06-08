@@ -22,10 +22,10 @@ class CountDownBid extends StatefulWidget {
 class _CountDownBidState extends State<CountDownBid> {
   // FIX countdown
   // Duration duration = Duration(hours: 17, minutes: 08, seconds: 45);
+  // Fix countdown for test
+  // Duration duration = Duration(seconds: 3);
   // Random countdown hours
   Duration duration = Duration(hours: Random().nextInt(24));
-  // Fix to test
-  // Duration duration = Duration(seconds: 3);
 
   Timer? timer;
   bool isEnd = false;
