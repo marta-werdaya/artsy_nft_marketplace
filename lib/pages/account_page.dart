@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/app_colors.dart';
 import '../data/k_test_product.dart';
+import '../widgets/custom_dialog.dart';
 import '../widgets/preview_card.dart';
 
 class AccountPage extends StatelessWidget {
@@ -104,8 +105,17 @@ class AccountPage extends StatelessWidget {
                         ],
                       ),
                       OutlinedButton(
-                        onPressed: () {},
-                        child: Text('Follow'),
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (_) => CustomDialog(
+                              isSuccess: false,
+                              message:
+                                  'Sorry, this feature is not implemented yet : (',
+                            ),
+                          );
+                        },
+                        child: Text('Edit'),
                       ),
                     ],
                   ),

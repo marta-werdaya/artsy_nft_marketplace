@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
 import 'custom_card.dart';
+import 'custom_dialog.dart';
 
 class ListCard extends StatelessWidget {
   final String name;
@@ -60,7 +61,14 @@ class ListCard extends StatelessWidget {
               style: OutlinedButton.styleFrom(
                   padding: EdgeInsets.symmetric(
                       horizontal: AppSizes.p4, vertical: AppSizes.p4)),
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (_) => CustomDialog(
+                    message: 'Congratulations your have already followed $name',
+                  ),
+                );
+              },
               child: Text('Follow'),
             )
           ],

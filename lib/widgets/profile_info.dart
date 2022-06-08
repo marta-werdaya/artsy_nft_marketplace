@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
+import 'custom_dialog.dart';
 
 class ProfileInfo extends StatelessWidget {
   final String sellerName;
@@ -64,7 +65,16 @@ class ProfileInfo extends StatelessWidget {
             ],
           ),
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (_) => CustomDialog(
+                  // isSuccess: false,
+                  message:
+                      'Congratulations your have already followed $sellerName',
+                ),
+              );
+            },
             child: Text('Follow'),
           ),
         ],

@@ -3,6 +3,7 @@ import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
 import 'package:artsy_nft_marketplace/widgets/title_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/custom_dialog.dart';
 import '../widgets/icon_display.dart';
 import '../widgets/latest_transaction.dart';
 import '../widgets/wallet_card.dart';
@@ -22,7 +23,13 @@ class WalletPage extends StatelessWidget {
             ),
             tooltip: 'Open shopping cart',
             onPressed: () {
-              // handle the press
+              showDialog(
+                context: context,
+                builder: (_) => CustomDialog(
+                  isSuccess: false,
+                  message: 'Sorry, this feature is not implemented yet : (',
+                ),
+              );
             },
           ),
         ],

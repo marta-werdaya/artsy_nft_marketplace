@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/app_colors.dart';
 import '../constant/app_sizes.dart';
+import 'custom_dialog.dart';
 
 class BidBottomSheet extends StatelessWidget {
   const BidBottomSheet({
@@ -34,7 +35,18 @@ class BidBottomSheet extends StatelessWidget {
           Container(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+
+                showDialog(
+                  context: context,
+                  builder: (_) => CustomDialog(
+                    // isSuccess: false,
+                    message:
+                        'CONGRATULATIONS, your bid has been added into the list.',
+                  ),
+                );
+              },
               child: Text('Confirm'),
             ),
           ),

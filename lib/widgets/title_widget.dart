@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constant/app_colors.dart';
 import '../constant/app_sizes.dart';
+import 'custom_dialog.dart';
 
 class TitleWidget extends StatelessWidget {
   final String title;
@@ -37,10 +38,22 @@ class TitleWidget extends StatelessWidget {
             ),
           ),
           isSeeAll
-              ? Text(
-                  'See All',
-                  style: TextStyle(
-                    color: AppColor.secondary,
+              ? TextButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (_) => CustomDialog(
+                        isSuccess: false,
+                        message:
+                            'Sorry, this feature is not implemented yet : (',
+                      ),
+                    );
+                  },
+                  child: Text(
+                    'See All',
+                    style: TextStyle(
+                      color: AppColor.secondary,
+                    ),
                   ),
                 )
               : SizedBox(),

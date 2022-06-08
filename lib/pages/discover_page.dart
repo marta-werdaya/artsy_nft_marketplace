@@ -21,8 +21,6 @@ class DiscoverPage extends StatelessWidget {
           children: [
             SearchBar(),
             Wrap(
-              alignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
               spacing: AppSizes.p10,
               runSpacing: AppSizes.p10,
               children: [
