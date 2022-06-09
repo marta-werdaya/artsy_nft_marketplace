@@ -2,9 +2,11 @@ import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
 import 'package:artsy_nft_marketplace/data/k_test_product.dart';
 import 'package:flutter/material.dart';
 
+import '../constant/app_breakpoint.dart';
 import '../constant/app_colors.dart';
 import '../widgets/category_widget.dart';
 import '../widgets/logo_app_bar.dart';
+import '../widgets/responsive_two_column_layout.dart';
 import '../widgets/search_bar.dart';
 import '../widgets/title_widget.dart';
 import '../widgets/top_seller.dart';
@@ -19,26 +21,39 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: LogoAppBar(),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            WelcomeText(),
-            SearchBar(
-              hint: 'Search NFT name or Seller name',
-              products: product,
-            ),
-            TitleWidget(
-              title: 'Trending NFT',
-              isSeeAll: true,
-            ),
-            CategoryWidget(),
-            TrendingNFT(),
-            TitleWidget(
-              title: 'Top Seller',
-              isSeeAll: true,
-            ),
-            TopSeller(),
-          ],
+        child: ResponsiveTwoColumnLayout(
+          spacing: AppSizes.p16,
+          breakpoint: AppBreakpoint.tablet,
+          startFlex: 3,
+          endFlex: 3,
+          rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
+          rowCrossAxisAlignment: CrossAxisAlignment.start,
+          columnCrossAxisAlignment: CrossAxisAlignment.start,
+          startContent: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              WelcomeText(),
+              SearchBar(
+                hint: 'Search NFT name or Seller name',
+                products: product,
+              ),
+              TitleWidget(
+                title: 'Trending NFT',
+                isSeeAll: true,
+              ),
+              CategoryWidget(),
+              TrendingNFT(),
+            ],
+          ),
+          endContent: Column(
+            children: [
+              TitleWidget(
+                title: 'Top Seller',
+                isSeeAll: true,
+              ),
+              TopSeller(),
+            ],
+          ),
         ),
       ),
     );

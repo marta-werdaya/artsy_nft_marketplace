@@ -18,9 +18,11 @@ class ProfileInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var deviceWidth = MediaQuery.of(context).size.width;
+    var margin = deviceWidth >= 700 ? 200.0 : AppSizes.p24;
     return Padding(
-      padding: EdgeInsets.only(
-          left: AppSizes.p24, right: AppSizes.p24, bottom: AppSizes.p16),
+      padding:
+          EdgeInsets.only(left: margin, right: margin, bottom: AppSizes.p16),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

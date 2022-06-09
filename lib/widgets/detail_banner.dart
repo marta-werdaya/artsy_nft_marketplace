@@ -16,10 +16,17 @@ class DetailBanner extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       clipBehavior: Clip.none,
       children: [
-        Image.asset(product.imageUrl),
+        Image.asset(
+          product.imageUrl,
+          width: MediaQuery.of(context).size.width >= 500
+              ? 500
+              : MediaQuery.of(context).size.width,
+        ),
         GlassMorphism(
           child: Container(),
-          height: 360,
+          height: MediaQuery.of(context).size.width >= 500
+              ? 500
+              : MediaQuery.of(context).size.width,
           width: double.infinity,
         ),
 

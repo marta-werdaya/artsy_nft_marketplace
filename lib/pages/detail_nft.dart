@@ -26,6 +26,8 @@ class _DetailNFTState extends State<DetailNFT> {
   @override
   Widget build(BuildContext context) {
     // print(widget.productId);
+    var deviceWidth = MediaQuery.of(context).size.width;
+    var margin = deviceWidth >= 700 ? 200.0 : AppSizes.p24;
     final product =
         kTestProducts.firstWhere((product) => product.id == widget.productId);
     final seller =
@@ -66,7 +68,7 @@ class _DetailNFTState extends State<DetailNFT> {
               imageUrl: seller.imageUrl,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
+              padding: EdgeInsets.symmetric(horizontal: margin),
               child: Text(
                 'jika coountdown telah mencapai "00 : 00 : 00" maka tombol akan di disable, countdown menjadi text "time is up!!!" dan "curent bid" akan berubah menjadi "FINAL BID". Untuk mengatur waktu countdown pergi ke file countdown_bid.dart secara default tiap masuk ke detail NFT akan digenerete waktu secara random dengan maximum di 24 jam.',
               ),
@@ -74,7 +76,7 @@ class _DetailNFTState extends State<DetailNFT> {
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(
-                  horizontal: AppSizes.p24, vertical: AppSizes.p16),
+                  horizontal: margin, vertical: AppSizes.p16),
               child: ElevatedButton(
                 onPressed: closeTheBid
                     ? null

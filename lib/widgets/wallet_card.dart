@@ -15,7 +15,8 @@ class WalletCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomCard(
       color: AppColor.primary,
-      margin: EdgeInsets.only(bottom: AppSizes.p32),
+      margin: EdgeInsets.only(
+          bottom: AppSizes.p32, left: AppSizes.p24, right: AppSizes.p24),
       child: Column(
         children: [
           Padding(
@@ -41,7 +42,7 @@ class WalletCard extends StatelessWidget {
                       '2,890.00',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: AppSizes.p32,
+                        fontSize: MediaQuery.of(context).size.width / 25,
                       ),
                     ),
                   ],
@@ -50,7 +51,7 @@ class WalletCard extends StatelessWidget {
                 // Logo ETH
                 Image.asset(
                   AppAssets.iconLogoEth,
-                  height: AppSizes.p64,
+                  height: MediaQuery.of(context).size.width / 10,
                 )
               ],
             ),

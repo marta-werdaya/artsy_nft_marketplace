@@ -21,9 +21,11 @@ class _CountDownWidgetState extends State<CountDownWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var deviceWidth = MediaQuery.of(context).size.width;
+    var margin = deviceWidth >= 700 ? 200.0 : AppSizes.p24;
     return CustomCard(
-      margin: EdgeInsets.only(
-          left: AppSizes.p24, right: AppSizes.p24, bottom: AppSizes.p32),
+      margin:
+          EdgeInsets.only(left: margin, right: margin, bottom: AppSizes.p32),
       child: Container(
           padding: EdgeInsets.symmetric(
               vertical: AppSizes.p12, horizontal: AppSizes.p24),

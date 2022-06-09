@@ -48,16 +48,18 @@ class _SearchBarState extends State<SearchBar> {
   }
 
   void showOverlay(BuildContext context) {
+    var deviceWidth = MediaQuery.of(context).size.width;
+    var margin = deviceWidth >= 700 ? 300.0 : AppSizes.p24;
     OverlayState? overlayState = Overlay.of(context);
     final renderBox = context.findRenderObject() as RenderBox;
     final size = renderBox.size;
     overlayEntry = OverlayEntry(
       builder: (context) => Padding(
-        padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
+        padding: EdgeInsets.symmetric(horizontal: margin),
         child: CompositedTransformFollower(
           link: layerLink,
           showWhenUnlinked: false,
-          offset: Offset(24, size.height - 20),
+          offset: Offset(margin, size.height - 20),
           child: OverlaySugesstion(
             products: productsAll,
             onTap: () {
@@ -79,13 +81,15 @@ class _SearchBarState extends State<SearchBar> {
 
   @override
   Widget build(BuildContext context) {
+    var deviceWidth = MediaQuery.of(context).size.width;
+    var margin = deviceWidth >= 700 ? 100.0 : AppSizes.p24;
     return CompositedTransformTarget(
       link: layerLink,
       child: Padding(
         padding: EdgeInsets.only(
           bottom: AppSizes.p32,
-          left: AppSizes.p24,
-          right: AppSizes.p24,
+          left: margin,
+          right: margin,
         ),
         child: TextFormField(
           focusNode: focusNode,

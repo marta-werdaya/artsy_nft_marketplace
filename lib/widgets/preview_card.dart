@@ -41,11 +41,14 @@ class PreviewCard extends StatelessWidget {
             alignment: Alignment.topRight,
             children: [
               Column(
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(
                     imageUrl,
-                    width: (MediaQuery.of(context).size.width - 92) / 2,
+                    width: ((MediaQuery.of(context).size.width - 92) / 2) >= 200
+                        ? 150
+                        : (MediaQuery.of(context).size.width - 92) / 2,
                   ),
                   AppSizes.gapH12,
                   Text(

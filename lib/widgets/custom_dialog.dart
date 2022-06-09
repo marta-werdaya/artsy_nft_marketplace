@@ -56,7 +56,9 @@ class CustomDialog extends StatelessWidget {
               ),
 
               Container(
-                width: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width >= 400
+                    ? 400
+                    : MediaQuery.of(context).size.width,
                 padding: EdgeInsets.only(
                     // bottom: AppSizes.p64,
                     left: AppSizes.p24,
