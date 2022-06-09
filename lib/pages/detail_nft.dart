@@ -34,6 +34,7 @@ class _DetailNFTState extends State<DetailNFT> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text('Detail NFT'),
+        centerTitle: true,
         backgroundColor: AppColor.transparent,
         excludeHeaderSemantics: true,
         actions: [
