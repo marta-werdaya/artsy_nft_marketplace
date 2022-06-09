@@ -1,4 +1,5 @@
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
+import 'package:artsy_nft_marketplace/data/k_test_product.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/app_colors.dart';
@@ -14,6 +15,7 @@ class HomePage extends StatelessWidget {
 // TODO: make it responsive
   @override
   Widget build(BuildContext context) {
+    var product = kTestProducts;
     return Scaffold(
       appBar: LogoAppBar(),
       body: SingleChildScrollView(
@@ -21,7 +23,10 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             WelcomeText(),
-            SearchBar(),
+            SearchBar(
+              hint: 'Search NFT name or Seller name',
+              products: product,
+            ),
             TitleWidget(
               title: 'Trending NFT',
               isSeeAll: true,

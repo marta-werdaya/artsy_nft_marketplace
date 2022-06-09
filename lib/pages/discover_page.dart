@@ -19,7 +19,10 @@ class DiscoverPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SearchBar(),
+            SearchBar(
+              hint: 'Search with NFT name or Seller name',
+              products: products,
+            ),
             Wrap(
               spacing: AppSizes.p10,
               runSpacing: AppSizes.p10,

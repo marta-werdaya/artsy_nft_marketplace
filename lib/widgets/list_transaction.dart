@@ -10,6 +10,7 @@ class ListTransaction extends StatelessWidget {
   final String nftName;
   final double price;
   final String sellerName;
+
   const ListTransaction({
     Key? key,
     required this.id,
