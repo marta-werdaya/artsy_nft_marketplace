@@ -11,7 +11,7 @@ import '../widgets/trending_nft.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
-
+// TODO: make it responsive
   @override
   Widget build(BuildContext context) {
     return Scaffold(

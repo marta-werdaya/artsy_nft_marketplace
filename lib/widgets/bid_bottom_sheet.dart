@@ -14,7 +14,7 @@ class BidBottomSheet extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSizes.p24),
       child: Column(
-        // mainAxisSize: MainAxisSize.min,
+        // TODO : add text functionality
         children: [
           AppSizes.gapH16,
           Container(
