@@ -25,7 +25,7 @@ class _DetailNFTState extends State<DetailNFT> {
   bool closeTheBid = false;
   @override
   Widget build(BuildContext context) {
-    print(widget.productId);
+    // print(widget.productId);
     final product =
         kTestProducts.firstWhere((product) => product.id == widget.productId);
     final seller =
