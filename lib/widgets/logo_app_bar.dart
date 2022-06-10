@@ -1,3 +1,4 @@
+import 'package:artsy_nft_marketplace/constant/app_string.dart';
 import 'package:flutter/material.dart';
 
 import '../constant/app_sizes.dart';
@@ -26,8 +27,7 @@ class LogoAppBar extends StatelessWidget implements PreferredSize {
               showDialog(
                 context: context,
                 builder: (_) => CustomDialog(
-                  message:
-                      'ARTSY merupakan sebuah aplikasi marketplace untuk NFT yang dirancang dari tahap design UI, yang banyak terinspirasi dari dribble, serta implementasi feature sederhana tanpa API, dimana Aplikasi ini hanya menggunakan data dummy yang diakses secara singkronus. Namun demikian tetap memiliki data ayng dinamis dan dengan tampilan UI yang menarik',
+                  message: AppString.about,
                 ),
               );
             },
