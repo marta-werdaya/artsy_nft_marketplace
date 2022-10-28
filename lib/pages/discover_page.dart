@@ -1,9 +1,8 @@
+import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
+import 'package:artsy_nft_marketplace/data/k_test_product.dart';
 import 'package:artsy_nft_marketplace/widgets/preview_card.dart';
 import 'package:artsy_nft_marketplace/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
-
-import '../constant/app_sizes.dart';
-import '../data/k_test_product.dart';
 
 class DiscoverPage extends StatelessWidget {
   const DiscoverPage({Key? key}) : super(key: key);
@@ -20,8 +19,8 @@ class DiscoverPage extends StatelessWidget {
         child: Column(
           children: [
             SearchBar(
-              hint: 'Search with NFT name or Seller name',
               products: products,
+              hint: 'Search with NFT name or seller name',
             ),
             Wrap(
               spacing: AppSizes.p10,
@@ -35,7 +34,7 @@ class DiscoverPage extends StatelessWidget {
                     nftName: products[i].nftName,
                   )
               ],
-            ),
+            )
           ],
         ),
       ),

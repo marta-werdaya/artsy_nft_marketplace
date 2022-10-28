@@ -14,8 +14,8 @@ class ThemeButton {
   );
   static final outlinedButton = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
+      foregroundColor: AppColor.white,
       padding: EdgeInsets.symmetric(horizontal: 32, vertical: 18),
-      primary: AppColor.white,
       textStyle: TextStyle(
         fontSize: 12.0,
         fontWeight: FontWeight.w600,
@@ -28,7 +28,7 @@ class ThemeButton {
 
   static final textButton = TextButtonThemeData(
     style: TextButton.styleFrom(
-      primary: AppColor.secondary,
+      foregroundColor: AppColor.secondary,
     ),
   );
 }
