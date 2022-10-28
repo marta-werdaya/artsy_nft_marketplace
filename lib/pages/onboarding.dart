@@ -1,9 +1,10 @@
 import 'package:artsy_nft_marketplace/constant/app_assets.dart';
+import 'package:artsy_nft_marketplace/constant/app_routes.dart';
 import 'package:artsy_nft_marketplace/constant/app_sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../constant/app_colors.dart';
-import 'custom_navigation_bar.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
@@ -53,15 +54,9 @@ class OnBoardingPage extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: AppSizes.p24),
                   width: MediaQuery.of(context).size.width,
                   child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                          builder: ((context) => CustomNavigationBar()),
-                        ),
-                        (route) => false,
-                      );
-                    },
+                    onPressed: () => context.goNamed(
+                      AppRoutes.bottomNavigation.name,
+                    ),
                     child: Text('Get Started'),
                   ),
                 )

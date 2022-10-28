@@ -1,4 +1,4 @@
-import 'package:artsy_nft_marketplace/pages/onboarding.dart';
+import 'package:artsy_nft_marketplace/constant/app_routes.dart';
 import 'package:artsy_nft_marketplace/theme/theme_button.dart';
 import 'package:artsy_nft_marketplace/theme/theme_color.dart';
 import 'package:artsy_nft_marketplace/theme/theme_input.dart';
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'ARTSY-NFT Marketplace',
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0xff1B222A),
@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
           shadowColor: AppColor.transparent,
         ),
       ),
-      home: OnBoardingPage(),
+      routerConfig: routes,
+      // home: OnBoardingPage(),
     );
   }
 }
